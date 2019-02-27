@@ -11,3 +11,4 @@ HTML, CSS, Javascript
 - Aman Thakali
 
 ## Acknowledgement
+Thanks to the instructors and teaching assistants at Columbia Univeristy Coding Bootcamp.

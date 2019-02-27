@@ -65,5 +65,5 @@ $("#password-reset").on("click", function(event) {
 
 $("#logOut").on("click", function(event) {
   firebase.auth().signOut();
-  $(".container").hide();
+  //   $(".container").hide();
 });

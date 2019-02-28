@@ -17,25 +17,6 @@ $("#login").on("click", function() {
   promise.catch(function(event) {
     console.log(event.message);
   });
-
-  firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      // TODO
-      // Display confirmation
-      // Display name
-      // include Josh code
-
-      // testing. this should direct to the new page
-      var email_id = user.email;
-      $("#paragraph1").text("Welcome " + email_id);
-      $("#paragraph2").text("Your booking date is 2019-03-01");
-
-      console.log(user);
-      logOut.classList.remove("d-none");
-    } else {
-      console.log("not logged in");
-    }
-  });
 });
 
 $("#signUp").on("click", function(event) {
@@ -65,5 +46,25 @@ $("#password-reset").on("click", function(event) {
 
 $("#logOut").on("click", function(event) {
   firebase.auth().signOut();
-  //   $(".container").hide();
+  $(".container").hide();
+});
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // TODO
+    // make a other functions that wil take
+    // Display confirmation
+    // Display name
+    // include Josh code
+    // window.location = "../templates/booking.html"; // Redirecting to other page
+    // testing. this should direct to the new page
+    var email_id = user.email;
+    $("#paragraph1").text("Welcome " + email_id);
+    $("#paragraph2").text("Your booking date is 2019-03-01");
+
+    console.log(user);
+    logOut.classList.remove("d-none");
+  } else {
+    console.log("not logged in");
+  }
 });

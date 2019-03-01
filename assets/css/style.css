@@ -1,0 +1,23 @@
+body{
+    background-image :  url("../images/background.jpg");
+    width: auto;
+}
+h1{
+    padding: 20px;
+    margin-top: 20px;
+font-family: fantasy;
+font-weight: bold;
+font-size: 30px;
+color: wheat;
+text-align: center;
+}
+p{
+    color: rgb(208, 221, 198);
+}
+/* #wrapper{
+    align-items: center;
+    box-align: center;
+} */
+.thing{
+    align-content: center;
+}

@@ -50,7 +50,16 @@
       </nav>
     </header>
     <div class="container">
-      <div class="form-group">
+      <div class="form-group name">
+        <label for="inputEmail">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstNameInput lastNameInput"
+          placeholder="Enter Name"
+        />
+      </div>
+      <div class="form-group email">
         <label for="inputEmail">Email address</label>
         <input
           type="email"
@@ -59,7 +68,7 @@
           placeholder="Enter email"
         />
       </div>
-      <div class="form-group">
+      <div class="form-group password">
         <label for="inputPassword">Password</label>
         <input
           type="password"
@@ -68,18 +77,25 @@
           placeholder="Password"
         />
       </div>
+
       <div>
-        <button id="login" class="btn btn-primary btn-action">Log in</button>
-        <button id="signUp" class="btn btn-primary">Sign Up</button>
+        <button id="login" class="btn btn-primary btn-action mb-2">
+          Already Registered? Log in
+        </button>
+
+        <button class="btn btn-primary btn-action mb-2" id="password-reset">
+          send
+        </button>
+
+        <p class="mb-2 " id="forgot-password">
+          Forgot your password?
+        </p>
+        <button id="signUp" class="btn btn-primary signup mb-2">
+          Create an account
+        </button>
         <!-- <button id="logOut" class="btn btn-primary btn-action d-none">
           Log Out
         </button> -->
-        <button class="btn btn-primary " id="password-reset">
-          Send Password Reset Email
-        </button>
-
-        <div id="paragraph1"></div>
-        <div id="paragraph2"></div>
       </div>
     </div>
 

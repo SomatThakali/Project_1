@@ -1,94 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <title>Blue Llama</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-md">
+      <a class="navbar-brand" href="index.html">
+        <h1 id="blue-llama-heading" class="display-4">BLUE LLAMA <span id="retreats-heading">Retreats</span></h1>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <div class="navbar-nav nav">
+          <a class="nav-item nav-link display-4" id="home" href="index.html">Home</a>
+          <a class="nav-item nav-link display-4" id="location" href="location.html">Location</a>
+          <a class="nav-item nav-link display-4" id="retreats" href="retreats.html">The Retreats</a>
+          <a class="nav-item nav-link display-4" id="book" href="booking.html">Book Now</a>
+          <a class="nav-item nav-link display-4" id="signIn" href="signUp.html">Sign-In/ Register</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- body -->
+
+
+
+  <!-- slick slide show -->
+  <div id="slideShow" class="container container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="thing" id="wrapper">
+          <img src="../assets/images/lady-libert-II.jpeg" class="slider" alt="slider">
+          <img src="../assets/images/solo-tent.png" class="slider" alt="slider">
+          <img src="../assets/images/interior-tent-III.png" class="slider" alt="slider">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12" id="mainPage">
+        <h1 id="tagline">UNEXPECTED – UNEXPLORED – REINVIGORATE</h1>
+        </br>
+        <div id="blue-blurb">
+          <p>Blue Llama Retreats offers overnight accommodations in the most unexpected places in
+            New York City. Spend a night in Grand Central Station, Central Park or The High Line
+            for a stay that will re-invigorate you and yours.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <div class="container" id="newsandEvents">
+    <div id="news-cards" class="row">
+      <div class="col-lg-4">
+        <div class="card bg-dark">
+          <img class="card-img-top" src="../assets/images/night-II.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Governor's Island</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Stay in awe, for a while.</h6>
+            <p class="card-text">A quick ferry ride from downtown Manhattan, this peaceful oasis is nestled near the
+              hills of historic Governors Island.
+              <br>
+              <br>
+              You’ll be surrounded by sprawling green space with unparalleled views
+              of the Statue of Liberty across the New York Harbor. It’s a retreat unlike any other in the world.</p>
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card bg-dark">
+          <img class="card-img-top" src="../assets/images/grand-central.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Grand Central Station</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Build iconic memories...</h6>
+            <p class="card-text">Opened to the public on February 2, 1913, Grand Central is a world-famous landmark and
+              in Midtown Manhattan. Its rich history is a story of immense wealth and great engineering, but also of
+              survival and rebirth.
+              <br>
+              <br>
+              Grand Central Terminal goes by many names...Just don’t call us “Grand Central Station”
+            </p>
+            <a href="#" class="card-link">card link</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card bg-dark">
+          <img class="card-img-top" src="../assets/images/high-line-eve.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">The High Line</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <p class="card-text">Built on a historic, elevated freight line, the High Line has become a world-renowned
+              inspiration for how cities can transform industrial infrastructure into beautiful, hybrid public spaces.
+              <br>
+              <br>
+              A public space where you can view art, walk through gardens, experience a performance, savor delicious
+              food, or just connect with friends and neighbors—while enjoying a unique perspective of New York City.
+            </p>
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <!-- footer -->
+  <div class="card-footer text-black text-center">
+    <p id="footer-text">© 2019 Blue Llama </p>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-
-  <title>Blue Llama</title>
-</head>
-
-<body>
-  <header>
-    <nav class="navbar navbar-expand-md navbar navbar-dark bg-dark">
-      <a class="navbar-brand  bm-2 ntext-white" href="index.html"><img src="./assets/images/image.jpg" width="200"></a>
-      <div class="navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-        <div class="navbar-nav nav">
-          <a class="nav-item nav-link active" id="home" href="">Home</a>
-          <a class="nav-item nav-link" id="location" href="">Location</a>
-          <a class="nav-item nav-link" id="retreats" href="">The Retreats</a>
-          <a class="nav-item nav-link" id="book" href="">Book Now</a>
-          <a class="nav-item nav-link" id="signIn" href="">Sign-In/ Register</a>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4">
-        <div class="card" style="width: 18rem;">
-          <img src="../assets/images/" class="card-img-top" alt="Grand Central">
-          <div class="card-body">
-            <h5 class="card-title">Grand Central Station</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <input type="radio" name="click here" value="select"> Reserve an iconic experience
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="card" style="width: 18rem;">
-          <img src="../assets/images/campfire-scene.png" class="card-img-top" alt="tent">
-          <div class="card-body">
-            <h5 class="card-title">Governor's Island</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content. lefiosdj hofdjds hdfife ifasdfh dshfwofhsufgrooh.</p>
-            <input type="radio" name="click here" value="select"> Be in awe...<em>for a while.</em>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="card" style="width: 18rem;">
-          <img src="../assets/images/kids-playing.png" class="card-img-top" alt="tent">
-          <div class="card-body">
-            <h5 class="card-title">Central Park</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.jfosdjfiodfjO HODFSJf fjwojfo aji ajffjifd</p>
-            <input type="radio" name="click here" value="select"> Reserve your experience
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <button type="button" class="btn btn-primary" id="bookNow">Continue</button>
-        </div>
-      </div>
-    </div>
-    </a>
-  </div>
-  </div>
-  </div>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('.thing').slick({
+        dots: true,
+        arrows: false,
+        fade: true,
+        autoplay: true,
+        autoplaySpeed: 3500
+      });
+    });
+  </script>
 </body>
 
 </html>
-

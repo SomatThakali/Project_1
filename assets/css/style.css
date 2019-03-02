@@ -77,9 +77,6 @@ body {
 }
 
 @media screen and (max-width: 991px) {
-    body {
-      background-color: blue;
-    }
     .card {
         width: 80%;
         margin-bottom: 10px;
@@ -90,9 +87,6 @@ body {
 }
   
 @media screen and (max-width: 768px) {
-    body {
-        background-color: olive;
-    }
     .card {
         width: 100%;
     }
@@ -106,9 +100,6 @@ body {
 }
 
 @media screen and (max-width: 640px) {
-    body {
-        background-color: olive;
-    }
     .card {
         width: 100%;
     }

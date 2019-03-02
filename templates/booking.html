@@ -1,34 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Blue Llama</title>
-</head>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+      <link rel="stylesheet" href="../assets/css/style.css">
+      <title>Blue Llama</title>
+  </head>
 
-<body>
-  <header>
-    <nav class="navbar navbar-expand-md navbar navbar-dark bg-dark">
-      <a class="navbar-brand  bm-2 ntext-white" href="index.html"><img src="./assets/images/image.jpg" width="200"></a>
-      <div class="navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-        <div class="navbar-nav nav">
-          <a class="nav-item nav-link active" id="home" href="">Home</a>
-          <a class="nav-item nav-link"  id="location" href="">Location</a>
-          <a class="nav-item nav-link" id="retreats" href="">The Retreats</a>
-          <a class="nav-item nav-link" id="book" href="">Book Now</a>
-          <a class="nav-item nav-link" id="signIn" href="">Sign-In/ Register</a>
-        </div>
-      </div>
-    </nav>
-  </header>
+  <body>
+      <header>
+        <nav class="navbar navbar-expand-md">
+            <a class="navbar-brand" href="index.html">
+              <h1 id="blue-llama-heading" class="display-4">BLUE LLAMA <span id="retreats-heading">Retreats</span></h1>
+            </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+            <div class="navbar-nav nav">
+                <a class="nav-item nav-link display-4" id="home" href="index.html">Home</a>
+                <a class="nav-item nav-link display-4" id="location" href="location.html">Location</a>
+                <a class="nav-item nav-link display-4" id="retreats" href="retreats.html">The Retreats</a>
+                <a class="nav-item nav-link display-4" id="book" href="booking.html">Book Now</a>
+                <a class="nav-item nav-link display-4" id="signIn" href="signUp.html">Sign-In/ Register</a>
+            </div>
+          </div> 
+        </nav>
+      </header> 
 
-  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-</body>
+
+       <!-- booking form -->
+       <div class="container">
+        <div class="row">
+          <div class="col-lg-6" id="formcss">
+            <h2>Booking Detail</h2>
+    
+        
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">First Name</label>
+            <input type="text" class="form-control" id="firstNameInput" />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Last Name</label>
+            <input type="text" class="form-control" id="lastNameInput" />
+          </div>
+          <div class="form-group">
+              <label for="exampleInputEmail1">Email</label>
+              <input type="text" class="form-control" value =".com" id="emailInput" />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Phone</label>
+              <input type="text" class="form-control" id="phoneNumberInput" />
+          <div class="form-group">
+            <label for="exampleInputEmail1">Booking Date</label>
+            <input type="date" class="form-control" id="bookingDate" />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Trip Date</label>
+            <input type="date" class="form-control" id="tripDate" />
+            </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Location</label>
+            <input type="text" class="form-control" id="locationBooked" />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Room Booked</label>
+            <input type="text" class="form-control" id="roomBooked" />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Booking Price</label>
+            <input type="text" value="$ "class="form-control" id="bookingPrice" />
+          
+          </div>
+    
+          <button class="btn btn-primary" id="submitButton" type="submit">
+            Submit
+          </button>
+          <button id="logOut" class="btn btn-primary btn-action">
+            Log Out
+          </button>
+      
+        </form>
+    
+    </div>
+    </div>
+    </div>
+         
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
 </html>

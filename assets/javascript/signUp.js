@@ -8,63 +8,94 @@ var config = {
 };
 firebase.initializeApp(config);
 
+$("#forgot-password").on("click", function() {
+  showHideButtons();
+  console.log("I am clicked");
+  $("#password-reset").on("click", function(event) {
+    var email = $("#email").val();
+    firebase
+      .auth()
+      .sendPasswordResetEmail(email)
+      .then(function() {
+        alert("Password Reset Email Sent!");
+      })
+      .catch(function(error) {
+        alert(error.message);
+      });
+  });
+});
 //call back function
 $("#login").on("click", function() {
   var email = $("#email").val();
   var password = $("#password").val();
 
-  const promise = firebase.auth().signInWithEmailAndPassword(email, password);
-  promise.catch(function(event) {
-    console.log(event.message);
-  });
-});
-
-$("#signUp").on("click", function(event) {
-  var email = $("#email").val();
-  var password = $("#password").val();
-
-  const promise = firebase
-    .auth()
-    .createUserWithEmailAndPassword(email, password);
-  promise.catch(function(event) {
-    console.log(event.message);
-  });
-});
-
-$("#password-reset").on("click", function(event) {
-  var email = $("#email").val();
   firebase
     .auth()
-    .sendPasswordResetEmail(email)
-    .then(function() {
-      alert("Password Reset Email Sent!");
-    })
+    .signInWithEmailAndPassword(email, password)
     .catch(function(error) {
-      console.log(error.message);
+      // Handle Errors here.
+      var errorCode = error.code;
+      if (errorCode === "auth/wrong-password") {
+        alert("Wrong password.");
+      } else if (errorCode === "auth/user-not-found") {
+        alert("User not found.");
+      } else if (errorCode == "auth/invalid-email") {
+        alert("The email is invalid.");
+      }
+      console.log(error);
     });
-});
-
-$("#logOut").on("click", function(event) {
-  firebase.auth().signOut();
-  $(".container").hide();
+  $("#forgot-password").show();
 });
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    // TODO
-    // make a other functions that wil take
-    // Display confirmation
-    // Display name
-    // include Josh code
-    // window.location = "../templates/booking.html"; // Redirecting to other page
-    // testing. this should direct to the new page
-    var email_id = user.email;
-    $("#paragraph1").text("Welcome " + email_id);
-    $("#paragraph2").text("Your booking date is 2019-03-01");
-
-    console.log(user);
-    logOut.classList.remove("d-none");
+    window.location = "../templates/booking.html";
   } else {
     console.log("not logged in");
   }
 });
+
+$("#signUp").on("click", function(event) {
+  console.log("signUp clicked! ");
+  $(".name").show();
+  var email = $("#email").val();
+  var password = $("#password").val();
+  firebase
+    .auth()
+    .createUserWithEmailAndPassword(email, password)
+    .catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      if (errorCode == "auth/weak-password") {
+        alert("The password is too weak.");
+        // } else if (errorCode == "auth/invalid-email") {
+        //   alert("The email is invalid.");
+        // } else if (errorCode == "auth/email-already-in-use") {
+        alert("This email is already in use.");
+      } else if (errorCode == "auth/operation-not-allowed") {
+        alert("The operation is not allowed.");
+      }
+      console.log(error);
+    });
+});
+
+function showHideButtons() {
+  $(".password").hide();
+  $(".signup").hide();
+  $("#login").hide();
+  $("#forgot-password").hide();
+  $("#password-reset").show();
+}
+
+function hidePasswordReset() {
+  $("#password-reset").hide();
+  $("#forgot-password").hide();
+  $(".name").hide();
+}
+
+hidePasswordReset();
+
+function makeFormEmpty() {
+  $("#email").val("");
+  $("#password").val("");
+}

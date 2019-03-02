@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
+    <title>Blue Llama</title>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar navbar-dark bg-dark">
+        <a class="navbar-brand  bm-2 ntext-white" href="index.html"
+          ><img src="../assets/images/image.jpg" width="200"
+        /></a>
+        <div
+          class="navbar-collapse justify-content-end"
+          id="navbarNavAltMarkup"
+        >
+          <div class="navbar-nav nav">
+            <a class="nav-item nav-link active" id="home" href="index.html"
+              >Home</a
+            >
+            <a class="nav-item nav-link" id="location" href="location.html"
+              >Location</a
+            >
+            <a class="nav-item nav-link" id="retreats" href="retreats.html"
+              >The Retreats</a
+            >
+            <a class="nav-item nav-link" id="book" href="booking.html"
+              >Book Now</a
+            >
+            <a class="nav-item nav-link" id="signIn" href="signUp"
+              >Sign-In/ Register</a
+            >
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <table id="myTable" class="table">
+      <thead>
+        <tr>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Trip Date</th>
+          <th scope="col">Phone Number</th>
+          <th scope="col">Book Date</th>
+          <th scope="col">Location Booked</th>
+          <th scope="col">Room Booked</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td id="firstNameDisplay"></td>
+          <td d="lastNameDisplay"></td>
+          <td id="emailDisplay"></td>
+          <td id="locationBookedDisplay"></td>
+          <td id="phoneNumberDisplay"></td>
+          <td id="bookingDateDisplay"></td>
+          <td id="locationBookedDisplayy"></td>
+          <td id="roomBookedDisplay"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button id="logOut" class="btn btn-primary btn-action">
+      Log Out
+    </button>
+
+    <script src="../assets/javascript/booking.js"></script>
+  </body>
+</html>

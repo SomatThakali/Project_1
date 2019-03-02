@@ -1,94 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+      <link rel="stylesheet" href="../assets/css/style.css">
+      <link rel="stylesheet" href="../assets/css/retreat.css">
+      <title>Blue Llama</title>
+  </head>
 
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-
-  <title>Blue Llama</title>
-</head>
-
-<body>
-  <header>
-    <nav class="navbar navbar-expand-md navbar navbar-dark bg-dark">
-      <a class="navbar-brand  bm-2 ntext-white" href="index.html"><img src="./assets/images/image.jpg" width="200"></a>
-      <div class="navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-        <div class="navbar-nav nav">
-          <a class="nav-item nav-link active" id="home" href="">Home</a>
-          <a class="nav-item nav-link" id="location" href="">Location</a>
-          <a class="nav-item nav-link" id="retreats" href="">The Retreats</a>
-          <a class="nav-item nav-link" id="book" href="">Book Now</a>
-          <a class="nav-item nav-link" id="signIn" href="">Sign-In/ Register</a>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4">
-        <div class="card" style="width: 18rem;">
-          <img src="../assets/images/" class="card-img-top" alt="Grand Central">
-          <div class="card-body">
-            <h5 class="card-title">Grand Central Station</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <input type="radio" name="click here" value="select"> Reserve an iconic experience
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md">
+          <a class="navbar-brand" href="index.html">
+            <h1 id="blue-llama-heading" class="display-4">BLUE LLAMA <span id="retreats-heading">Retreats</span></h1>
+          </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav nav">
+              <a class="nav-item nav-link display-4" id="home" href="index.html">Home</a>
+              <a class="nav-item nav-link display-4" id="location" href="location.html">Location</a>
+              <a class="nav-item nav-link display-4" id="retreats" href="retreats.html">The Retreats</a>
+              <a class="nav-item nav-link display-4" id="book" href="booking.html">Book Now</a>
+              <a class="nav-item nav-link display-4" id="signIn" href="signUp.html">Sign-In/ Register</a>
           </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="card" style="width: 18rem;">
-          <img src="../assets/images/campfire-scene.png" class="card-img-top" alt="tent">
-          <div class="card-body">
-            <h5 class="card-title">Governor's Island</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content. lefiosdj hofdjds hdfife ifasdfh dshfwofhsufgrooh.</p>
-            <input type="radio" name="click here" value="select"> Be in awe...<em>for a while.</em>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="card" style="width: 18rem;">
-          <img src="../assets/images/kids-playing.png" class="card-img-top" alt="tent">
-          <div class="card-body">
-            <h5 class="card-title">Central Park</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.jfosdjfiodfjO HODFSJf fjwojfo aji ajffjifd</p>
-            <input type="radio" name="click here" value="select"> Reserve your experience
-          </div>
-        </div>
-      </div>
+        </div> 
+      </nav>
+    </header> 
+  
+    <div id="retreatsDiv" class="container">
+      <br>
+      <br>
       <div class="row">
-        <div class="col">
-          <button type="button" class="btn btn-primary" id="bookNow">Continue</button>
+        <div class="col-md-7">
+          <img id="grand-central" src="../assets/images/grand-central.png" alt="grand-central">
+        </div>
+        <div class="col-md-5">
+          <h2 class="col-4-h2">Grand Central Nights</h2>
+          <p class="col-4-text">"In the subterranean depths of Manhattan, a huge space was 
+            carved out, where trains could be boarded from platforms at two 
+            different levels. Grand Central, the world's loveliest station."
+          <br>
+          <span>-David Cannadine</span></p>
+          <p class="col-4-price">$789</p>
+          <br>
+          <button type="submit" class="btn btn-warning book-now">Book Now</button>
+          <button type="button" class="btn btn-dark learn-more" href="learn_gc.html">Learn More</button>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-7">
+          <img id="central-park" src="../assets/images/centralpark.jpg" alt="grand-central">
+        </div>
+        <div class="col-md-5">
+          <h2 class="col-4-h2">Central Park Nights</h2>
+          <p class="col-4-text">"There is no place like it, no place with an atom of its glory, pride, and exultancy." 
+          <br>
+          <span>-Walt Whitman</span></p>
+          <p class="col-4-price">$658</p>
+          <br>
+          <button type="submit" class="btn btn-warning book-now">Book Now</button>
+          <button type="submit" class="btn btn-dark learn-more">Learn More</button>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-7">
+          <img id="highline" src="../assets/images/highline.jpeg" alt="grand-central">
+        </div>
+        <div class="col-md-5">
+          <h2 class="col-4-h2">Highline Nights</h2>
+          <p class="col-4-text">“It is always the city seen for the first time, in its first wild promise of all the mystery and the beauty in the world.”
+          <span>-F. Scott Fitzgerald</span></p>
+
+          <p class="col-4-price">$500</p>
+          <br>
+          <button type="submit" class="btn btn-warning book-now">Book Now</button>
+          <button type="button" class="btn btn-dark learn-more">Learn More</button>
         </div>
       </div>
     </div>
-    </a>
-  </div>
-  </div>
-  </div>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-</body>
 
-</html>
-
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
+  </body>

@@ -34,7 +34,17 @@
       </header> 
       
     <div class="container">
-      <div class="form-group">
+      <div class="form-group name">
+        <label for="inputEmail">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstNameInput lastNameInput"
+          placeholder="Enter Name"
+          required
+        />
+      </div>
+      <div class="form-group email">
         <label for="inputEmail">Email address</label>
         <input
           type="email"
@@ -43,7 +53,7 @@
           placeholder="Enter email"
         />
       </div>
-      <div class="form-group">
+      <div class="form-group password">
         <label for="inputPassword">Password</label>
         <input
           type="password"
@@ -52,32 +62,32 @@
           placeholder="Password"
         />
       </div>
+
       <div>
-        <button id="login" class="btn btn-primary btn-action">Log in</button>
-        <button id="signUp" class="btn btn-primary">Sign Up</button>
-        <button id="logOut" class="btn btn-primary btn-action d-none">
-          Log Out
-        </button>
-        <button class="btn btn-primary " id="password-reset">
-          Send Password Reset Email
+        <button id="login" class="btn btn-primary btn-action mb-2">
+          Already Registered? Log in
         </button>
 
-        <div id="paragraph1"></div>
-        <div id="paragraph2"></div>
+        <button class="btn btn-primary btn-action mb-2" id="password-reset">
+          send
+        </button>
+
+        <p class="mb-2 " id="forgot-password">
+          Forgot your password?
+        </p>
+        <button id="signUp" class="btn btn-primary signup mb-2">
+          Create an account
+        </button>
       </div>
     </div>
 
-    <script src="../../assets/javascript/signUp.js"></script>
+  <script src="../assets/javascript/signUp.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="../assets/javascript/signUp.js"></script>  
 
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-      crossorigin="anonymous"
-    ></script>
+  
   </body>
 </html>

@@ -46,6 +46,7 @@ $("#login").on("click", function() {
     });
   $("#forgot-password").show();
 });
+
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     window.location = "../templates/booking.html";
@@ -86,16 +87,15 @@ function showHideButtons() {
   $("#password-reset").show();
 }
 
-function hidePasswordResetForgot() {
+function hidePasswordReset() {
   $("#password-reset").hide();
   $("#forgot-password").hide();
   $(".name").hide();
 }
 
-hidePasswordResetForgot();
+hidePasswordReset();
 
-// function makeFormEmpty() {
-//   $("#email").val("");
-//   $("#password").val("");
-// }
-// makeFormEmpty();
+function makeFormEmpty() {
+  $("#email").val("");
+  $("#password").val("");
+}

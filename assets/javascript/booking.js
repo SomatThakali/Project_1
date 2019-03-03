@@ -41,6 +41,7 @@ $("#logOut").on("click", function() {
 });
 //on submit button click
 $("#submitButton").on("click", function(event) {
+  console.log("submit button clicked");
   event.preventDefault();
   //guest info
   firstName = $("#firstNameInput")
@@ -75,7 +76,9 @@ $("#submitButton").on("click", function(event) {
     .trim();
 
   //push to firebase
-  database.ref().push({
+  var myUserId = firebase.auth().currentUser.uid;
+  console.log("submitting booking for", myUserId);
+  database.ref("bookings/" + myUserId).push({
     //guest info
     First_name: firstName,
     Last_name: lastName,
@@ -95,28 +98,59 @@ $("#submitButton").on("click", function(event) {
   window.location = "../templates/confirmation.html";
 });
 
-database
-  .ref()
-  .orderByChild("userId")
-  .limitToLast(1)
-  .on(
-    "child_added",
-    function(snapshot) {
-      // renderRow(snapshot);
-      console.log("in here");
-      $("#firstNameDisplay").text(snapshot.val().First_name);
-      $("#lastNameDisplay").text(snapshot.val().Last_name);
-      $("#emailDisplay").text(snapshot.val().Email);
-      $("#tripDateDisplay").text(snapshot.val().Trip_date);
-      $("#phoneNumberDisplay").text(snapshot.val().Phone_number);
-      //dates
-      $("#bookingDateDisplay").text(snapshot.val().Date_purchased);
+database.ref().once(
+  "value",
+  function(snapshot) {
+    if (firebase.auth().currentUser) {
+      var myUserId = firebase.auth().currentUser.uid;
+      console.log(myUserId);
 
-      //location & room
-      $("#locationBookedDisplay").text(snapshot.val().Location);
-      $("#roomBookedDisplay").text(snapshot.val().roomBooked);
-    },
-    function(errorObject) {
-      console.log("Errors handled: " + errorObject.code);
+      database.ref("bookings/" + myUserId).on(
+        "child_added",
+        function(snapshot) {
+          renderRow(snapshot);
+          console.log("in here");
+        },
+        function(errorObject) {
+          console.log("Errors handled: " + errorObject.code);
+        }
+      );
+    } else {
+      console.log("user not logged in");
     }
+  },
+  function(errorObject) {
+    console.log("Errors handled: " + errorObject.code);
+  }
+);
+
+function renderRow(snap) {
+  var child = snap.val();
+
+  var tRow = $("<tr>");
+
+  var firstNameTd = $("<td id='firstNameDisplay'>").text(child.First_name);
+  var lastNameTd = $("<td id='lastNameDisplay'>").text(child.Last_name);
+  var emailTd = $("<td id='emailDisplay'>").text(child.Email);
+  var tripDateTd = $("<td id='tripDateDisplay'>").text(child.Trip_date);
+  var phoneNumberTd = $("<td id='tripDateDisplay'>").text(child.Phone_number);
+  var datePurchasedTd = $("<td id='bookingDateDisplay'>").text(
+    child.Date_purchased
   );
+  var locationTd = $("<td id='locationBookedDisplay'>").text(child.Location);
+  var roomBookedTd = $("<td id='roomBookedDisplay'>").text(child.roomBooked);
+
+  // Append the newly created table data to the table row
+  tRow.append(
+    firstNameTd,
+    lastNameTd,
+    emailTd,
+    tripDateTd,
+    phoneNumberTd,
+    datePurchasedTd,
+    locationTd,
+    roomBookedTd
+  );
+  // Append the table row to the table body
+  $("tbody").append(tRow);
+}

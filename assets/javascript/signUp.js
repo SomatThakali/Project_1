@@ -3,7 +3,7 @@ var config = {
   authDomain: "blue-lama-retreat-7a0c6.firebaseapp.com",
   databaseURL: "https://blue-lama-retreat-7a0c6.firebaseio.com",
   projectId: "blue-lama-retreat-7a0c6",
-  storageBucket: "",
+  storageBucket: "blue-lama-retreat-7a0c6.appspot.com",
   messagingSenderId: "106620423709"
 };
 firebase.initializeApp(config);
@@ -50,6 +50,7 @@ $("#login").on("click", function() {
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     window.location = "../templates/booking.html";
+    console.log("I am logged in");
   } else {
     console.log("not logged in");
   }

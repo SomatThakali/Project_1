@@ -24,21 +24,16 @@ var roomBooked = "";
 //price
 var bookingPrice = 0;
 var currentUser;
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    currentUser = user;
-    console.log(currentUser);
-    console.log(user.uid);
-  } else {
-    console.log("not logged in");
-  }
-});
-$("#logOut").on("click", function() {
-  console.log("I am log out");
-  window.location = "../templates/index.html";
-  firebase.auth().signOut();
-  $(".container").hide();
-});
+// firebase.auth().onAuthStateChanged(function(user) {
+//   if (user) {
+//     currentUser = user;
+//     console.log(currentUser);
+//     console.log(user.uid);
+//   } else {
+//     console.log("not logged in");
+//   }
+// });
+
 //on submit button click
 $("#submitButton").on("click", function(event) {
   console.log("submit button clicked");
@@ -91,19 +86,22 @@ $("#submitButton").on("click", function(event) {
     Location: locationBooked,
     Room: roomBooked,
     //price
-    Total_price: bookingPrice,
-    userId: currentUser.uid
+    Total_price: bookingPrice
+    // userId: currentUser.uid
   });
 
   window.location = "../templates/confirmation.html";
 });
 
+// recheck
 database.ref().once(
   "value",
   function(snapshot) {
     if (firebase.auth().currentUser) {
       var myUserId = firebase.auth().currentUser.uid;
       console.log(myUserId);
+      var myUserIdEmail = firebase.auth().currentUser.email;
+      $("#userMessage").text("Welcome " + myUserIdEmail);
 
       database.ref("bookings/" + myUserId).on(
         "child_added",
@@ -154,3 +152,9 @@ function renderRow(snap) {
   // Append the table row to the table body
   $("tbody").append(tRow);
 }
+
+$("#logOut").on("click", function() {
+  console.log("I am log out");
+  firebase.auth().signOut();
+  window.location = "../templates/index.html";
+});

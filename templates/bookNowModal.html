@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans"
       rel="stylesheet"
@@ -21,10 +22,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css"
     />
     <link rel="stylesheet" href="../assets/css/style.css" />
-    <title>Blue Llama</title>
   </head>
-
-  <body>
+  <body class="bg-light">
     <header>
       <nav class="navbar navbar-expand-md">
         <a class="navbar-brand" href="index.html">
@@ -77,6 +76,24 @@
       </nav>
     </header>
 
+    <div id="userMessage"></div>
+    <p class="text-center">
+      <a
+        href="booking.html"
+        role="button"
+        class="btn btn-secondary popover-test"
+        >Book Now</a
+      >
+    </p>
+    <p class="text-center">
+      <a
+        href="confirmation.html"
+        role="button"
+        class="btn btn-secondary popover-test"
+        >Booked History</a
+      >
+    </p>
+
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -93,34 +110,6 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
-
-    <input type="radio" name="radioBtn" ID="location1" /> Number 1 <br />
-    <input type="radio" name="radioBtn" ID="location2" /> Number 2 <br />
-    <input type="radio" name="radioBtn" ID="location3" /> Number 3
-
-    <br />
-    <br />
-
-    <input type="button" id="btnGetValue" Value="Get Value" />
-    <p id="locationDisplay"></p>
-
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.js"
-      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-      crossorigin="anonymous"
-    ></script>
-    <script src="../assets/javascript/locationBtn.js"></script>
+    <script src="../assets/javascript/booking.js"></script>
   </body>
 </html>

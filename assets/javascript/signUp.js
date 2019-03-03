@@ -42,14 +42,14 @@ $("#login").on("click", function() {
       } else if (errorCode == "auth/invalid-email") {
         alert("The email is invalid.");
       }
-      console.log(error);
+      // console.log(error);
     });
   $("#forgot-password").show();
 });
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    window.location = "../templates/booking.html";
+    window.location = "../templates/bookNowModal.html";
     console.log("I am logged in");
   } else {
     console.log("not logged in");
@@ -76,7 +76,7 @@ $("#signUp").on("click", function(event) {
       } else if (errorCode == "auth/operation-not-allowed") {
         alert("The operation is not allowed.");
       }
-      console.log(error);
+      // console.log(error);
     });
 });
 

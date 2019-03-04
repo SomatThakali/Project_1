@@ -1,0 +1,25 @@
+#gc_information {
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#image_gc {
+    max-width: 100%;
+    width: 100%;
+    height: 400px;
+
+}
+
+#gc_learnmore_h2 {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 25px;
+}
+
+#gc_text {
+    margin-top: 40px;
+    font-size: 18px;
+    width: 80%;
+}

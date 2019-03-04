@@ -83,7 +83,7 @@
         <input
           type="text"
           class="form-control"
-          id="firstNameInput lastNameInput"
+          id="firstNameInput"
           placeholder="Enter Name"
           required
         />
@@ -124,11 +124,26 @@
         <p class="mb-2 " id="forgot-password">
           Forgot your password?
         </p>
-        <button id="signUp" class="btn btn-primary signup mb-2">
+        <button id="createAccount" class="btn btn-primary signup mb-2">
           Create an account
+        </button>
+        <button id="signUp" class="btn btn-primary signup mb-2">
+          signUp
         </button>
       </div>
     </div>
+    <!-- <button
+      class="mdl-button mdl-js-button mdl-button--raised"
+      id="google-sign-in"
+    >
+      Sign in with Google
+    </button>
+    <button
+      class="mdl-button mdl-js-button mdl-button--raised"
+      id="facebook-sign-in"
+    >
+      Log in with Facebook
+    </button> -->
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -146,6 +161,8 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
     <script src="../assets/javascript/signUp.js"></script>
   </body>
 </html>

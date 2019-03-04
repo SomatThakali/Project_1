@@ -99,7 +99,8 @@ database.ref().once(
   function(snapshot) {
     if (firebase.auth().currentUser) {
       var myUserId = firebase.auth().currentUser.uid;
-      console.log(myUserId);
+      console.log(currentUser);
+
       var myUserIdEmail = firebase.auth().currentUser.email;
       $("#userMessage").text("Welcome " + myUserIdEmail);
 

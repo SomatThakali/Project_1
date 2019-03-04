@@ -3,13 +3,13 @@ var config = {
   authDomain: "blue-lama-retreat-7a0c6.firebaseapp.com",
   databaseURL: "https://blue-lama-retreat-7a0c6.firebaseio.com",
   projectId: "blue-lama-retreat-7a0c6",
-  storageBucket: "",
+  storageBucket: "blue-lama-retreat-7a0c6.appspot.com",
   messagingSenderId: "106620423709"
 };
 firebase.initializeApp(config);
 
 $("#forgot-password").on("click", function() {
-  showHideButtons();
+  showHideButtonsForForgotPassword();
   console.log("I am clicked");
   $("#password-reset").on("click", function(event) {
     var email = $("#email").val();
@@ -17,10 +17,17 @@ $("#forgot-password").on("click", function() {
       .auth()
       .sendPasswordResetEmail(email)
       .then(function() {
-        alert("Password Reset Email Sent!");
+        Swal.fire({
+          type: "success",
+          text: "Password Reset Email Sent!!"
+        });
       })
       .catch(function(error) {
-        alert(error.message);
+        Swal.fire({
+          type: "error",
+          title: "Oops...",
+          text: errorMessage
+        });
       });
   });
 });
@@ -35,51 +42,89 @@ $("#login").on("click", function() {
     .catch(function(error) {
       // Handle Errors here.
       var errorCode = error.code;
+      var errorMessage = error.message;
       if (errorCode === "auth/wrong-password") {
-        alert("Wrong password.");
-      } else if (errorCode === "auth/user-not-found") {
-        alert("User not found.");
-      } else if (errorCode == "auth/invalid-email") {
-        alert("The email is invalid.");
+        Swal.fire({
+          type: "error",
+          title: "Oops...",
+          text: "Wrong password!"
+        });
+      } else {
+        Swal.fire({
+          type: "error",
+          title: "Oops...",
+          text: errorMessage
+        });
       }
-      console.log(error);
+      // console.log(error);
     });
   $("#forgot-password").show();
 });
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    window.location = "../templates/booking.html";
+    // $("#userMessage").text("Welcome " + myUserIdEmail);
+    window.location = "../templates/bookNowModal.html";
+    console.log("I am logged in");
   } else {
     console.log("not logged in");
   }
 });
 
-$("#signUp").on("click", function(event) {
-  console.log("signUp clicked! ");
-  $(".name").show();
-  var email = $("#email").val();
-  var password = $("#password").val();
-  firebase
-    .auth()
-    .createUserWithEmailAndPassword(email, password)
-    .catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      if (errorCode == "auth/weak-password") {
-        alert("The password is too weak.");
-        // } else if (errorCode == "auth/invalid-email") {
-        //   alert("The email is invalid.");
-        // } else if (errorCode == "auth/email-already-in-use") {
-        alert("This email is already in use.");
-      } else if (errorCode == "auth/operation-not-allowed") {
-        alert("The operation is not allowed.");
-      }
-      console.log(error);
-    });
+$("#createAccount").on("click", function(event) {
+  showHideButtonsForSignUp();
+  $("#signUp").on("click", function(event) {
+    console.log("signUp clicked! ");
+
+    var email = $("#email").val();
+    var password = $("#password").val();
+
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        if (errorCode == "auth/weak-password") {
+          Swal.fire({
+            type: "error",
+            title: "Oops...",
+            text: "The password is too weak."
+          });
+        } else {
+          Swal.fire({
+            type: "error",
+            title: "Oops...",
+            text: errorMessage
+          });
+        }
+        // console.log(error);
+      });
+  });
 });
 
-function showHideButtons() {
+// function sendVerification() {
+//   var user = firebase.auth().currentUser;
+//   user
+//     .sendEmailVerification()
+//     .then(function() {
+//       Swal.fire({
+//         type: "success",
+//         title: "Verification sent",
+//         text: "Please verify your email!"
+//       });
+//     })
+//     .catch(function(error) {
+//       Swal.fire({
+//         type: "error",
+//         title: "Oops...",
+//         text: error
+//       });
+//     });
+// }
+
+function showHideButtonsForForgotPassword() {
   $(".password").hide();
   $(".signup").hide();
   $("#login").hide();
@@ -87,10 +132,18 @@ function showHideButtons() {
   $("#password-reset").show();
 }
 
+function showHideButtonsForSignUp() {
+  $("#signUp").show();
+  $(".name").show();
+  $("#createAccount").hide();
+  $("#login").hide();
+  $("#forgot-password").hide();
+}
 function hidePasswordReset() {
   $("#password-reset").hide();
   $("#forgot-password").hide();
   $(".name").hide();
+  $("#signUp").hide();
 }
 
 hidePasswordReset();
@@ -99,3 +152,71 @@ function makeFormEmpty() {
   $("#email").val("");
   $("#password").val("");
 }
+
+// $("#google-sign-in").on("click", function() {
+//   var provider = new firebase.auth.GoogleAuthProvider();
+//   provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
+//   console.log("google log in");
+//   firebase
+//     .auth()
+//     .signInWithPopup(provider)
+//     .then(function(result) {
+//       // This gives you a Google Access Token. You can use it to access the Google API.
+//       var token = result.credential.accessToken;
+//       // The signed-in user info.
+//       var user = result.user;
+//       console.log(user);
+//       // ...
+//     })
+//     .catch(function(error) {
+//       // Handle Errors here.
+//       var errorCode = error.code;
+//       var errorMessage = error.message;
+//       // The email of the user's account used.
+//       var email = error.email;
+//       // The firebase.auth.AuthCredential type that was used.
+//       var credential = error.credential;
+//       // ...
+//     });
+// });
+
+// $("#facebook-sign-in").on("click", function() {
+//   var provider = new firebase.auth.FacebookAuthProvider();
+//   // [END createprovider]
+//   // [START addscopes]
+//   provider.addScope("user_birthday");
+//   // [END addscopes]
+//   // [START signin]
+//   firebase
+//     .auth()
+//     .signInWithPopup(provider)
+//     .then(function(result) {
+//       // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+//       var token = result.credential.accessToken;
+//       // The signed-in user info.
+//       var user = result.user;
+//       // [START_EXCLUDE]
+//       document.getElementById("quickstart-oauthtoken").textContent = token;
+//       // [END_EXCLUDE]
+//     })
+//     .catch(function(error) {
+//       // Handle Errors here.
+//       var errorCode = error.code;
+//       var errorMessage = error.message;
+//       // The email of the user's account used.
+//       var email = error.email;
+//       // The firebase.auth.AuthCredential type that was used.
+//       var credential = error.credential;
+//       // [START_EXCLUDE]
+//       if (errorCode === "auth/account-exists-with-different-credential") {
+//         alert(
+//           "You have already signed up with a different auth provider for that email."
+//         );
+//         // If you are using multiple auth providers on your app you should handle linking
+//         // the user's accounts here.
+//       } else {
+//         console.error(error);
+//       }
+//       // [END_EXCLUDE]
+//     });
+// });

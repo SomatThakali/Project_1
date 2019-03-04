@@ -1,14 +1,16 @@
 #retreatsDiv {
-    width: 100%;
-    margin: auto;
-    height: 200px;
+  width: 100%;
+  margin: auto;
+  height: 200px;
 }
 
-#grand-central, #central-park, #highline {
-    width: 500px;
-    height: 350px
+#grand-central,
+#central-park,
+#highline {
+  width: 500px;
+  height: 350px;
 }
 
 .col-4-price {
-    font-size: 30px;
+  font-size: 30px;
 }

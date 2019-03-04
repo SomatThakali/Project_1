@@ -11,7 +11,7 @@
     width: 100%;
 }
 
-#gc_learnmore_h2 {
+#gc-learnmore-h2 {
     margin-top: 50px;
     text-align: center;
     font-size: 25px;
@@ -24,6 +24,96 @@
     width: 80%;
 }
 
+#accomodation {
+    max-width: 100%;
+    width: 100%;
+    margin: auto;
+    margin-top: 35px;
+    padding: 20px;
+    background-color: white;
+}
+
+#accomodation-text-h4, #menu-text-h4{
+    margin-top: 20px;
+    text-align: center;
+}
+
+#accomodation-row, #dining-row {
+    margin-top: 40px;
+}
+
+#glamping-grand-central {
+    width: 100%;
+    margin: auto;
+}
+
+#accomodation_h6 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#accomodation_p {
+    text-align: center;
+}
+
+.accomodation_list_details {
+    padding: 5px;
+}
+
+#dining {
+    max-width: 100%;
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+}
+
+#gc-dining-img {
+    width: 100%;
+}
+
+#dining_h6 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#directions {
+    background-color: white;
+    max-width: 100%;
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+}
+
+#directions-text-h4 {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#directions-text {
+    width: 100%;
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 18px;
+    width: 80%;
+}
+
+#google-map {
+    width: 80%;
+    height: 75%px;
+    margin-top: 30px;
+    margin-bottom: 35px;
+}
+
+@media screen and (max-width: 991px) {
+    #accomodation_h6 {
+        margin-top: 40px;
+    }
+    #dining_h6 {
+        margin-top: 40px;
+    }
+}
+
 @media screen and (max-width: 768px) {
     #gc_photo {
         width: 900px !important;
@@ -33,5 +123,8 @@
         margin-top: 35px;
         text-align: center;
         font-size: 25px;
+    }
+    #accomodation_p {
+        margin-top: 40px;
     }
 }

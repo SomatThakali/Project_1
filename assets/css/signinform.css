@@ -11,9 +11,14 @@ body {
     top: 100px;
 }
 
-#welcome-back {
+#please-login {
     text-align: center;
     color: #212121;
+}
+
+#forgot-password {
+    margin-top: 10px;
+    cursor: pointer;
 }
 
 /* #register {

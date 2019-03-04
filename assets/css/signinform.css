@@ -1,0 +1,54 @@
+body {
+    box-sizing: border-box;
+}
+
+#sign-in-container {
+    width: 380px;
+    height: 300px;
+    border-radius: 4px;
+    margin: auto;
+    position: relative;
+    top: 100px;
+}
+
+#welcome-back {
+    text-align: center;
+    color: #212121;
+}
+
+/* #register {
+    text-align: center;
+    color: #212121;
+} */
+
+.form-group {
+    margin-bottom: 0 !important;
+}
+
+.form-control {
+    border-radius: 4px;
+}
+
+.btn  {
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 4px;
+}
+
+#login {
+    margin-top: 30px;
+    background-color: #373737;
+    color: #f5f5f5;
+}
+
+#signUp {
+    background-color: orange;
+}
+
+@media screen and (max-width: 640px) {
+    #sign-in-container {
+        margin: auto;
+        position: relative;
+        top: 80px;
+    }
+}

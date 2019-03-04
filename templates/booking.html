@@ -9,6 +9,7 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
       <link rel="stylesheet" href="../assets/css/style.css">
+      <link rel="stylesheet" href="../assets/css/booking.css">
       <title>Blue Llama</title>
   </head>
 
@@ -18,7 +19,7 @@
             <a class="navbar-brand" href="index.html">
               <h1 id="blue-llama-heading" class="display-4">BLUE LLAMA <span id="retreats-heading">Retreats</span></h1>
             </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
@@ -27,7 +28,7 @@
                 <a class="nav-item nav-link display-4" id="location" href="location.html">Location</a>
                 <a class="nav-item nav-link display-4" id="retreats" href="retreats.html">The Retreats</a>
                 <a class="nav-item nav-link display-4" id="book" href="booking.html">Book Now</a>
-                <a class="nav-item nav-link display-4" id="signIn" href="signUp.html">Sign-In/ Register</a>
+                <a class="nav-item nav-link display-4" id="signIn" href="signUp.html">Signup/Login</a>
             </div>
           </div> 
         </nav>
@@ -37,11 +38,10 @@
        <!-- booking form -->
        <div class="container">
         <div class="row">
-          <div class="col-lg-6" id="formcss">
-            <h2>Booking Detail</h2>
+          <div class="col-lg-12" id="formcss">
+            <h3 id="booking-details-h3">Booking Details</h3>
     
-        
-        <form>
+        <form id="form-input">
           <div class="form-group">
             <label for="exampleInputEmail1">First Name</label>
             <input type="text" class="form-control" id="firstNameInput" />
@@ -56,11 +56,12 @@
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Phone</label>
-              <input type="text" class="form-control" id="phoneNumberInput" />
-          <div class="form-group">
+              <input type="text" class="form-control" id="phoneNumberInput"/>
+            </div>
+            <div class="form-group">
             <label for="exampleInputEmail1">Booking Date</label>
             <input type="date" class="form-control" id="bookingDate" />
-          </div>
+            </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Trip Date</label>
             <input type="date" class="form-control" id="tripDate" />
@@ -76,15 +77,10 @@
           <div class="form-group">
             <label for="exampleInputEmail1">Booking Price</label>
             <input type="text" value="$ "class="form-control" id="bookingPrice" />
-          
           </div>
     
-          <button class="btn btn-primary" id="submitButton" type="submit">
-            Submit
-          </button>
-          <button id="logOut" class="btn btn-primary btn-action">
-            Log Out
-          </button>
+          <button id="submitButton" class="btn" type="submit">Submit</button>
+          <button id="logOut" class="btn btn-action">Log Out</button>
       
         </form>
     

@@ -96,29 +96,31 @@
       <h2>Details</h2>
       <div>
         <label for="inputGroupSelect01">&nbsp;Room Type</label>
-        <select class="">
+        <select id="roomInput">
           <option value="blank"></option>
           <option value="1">1 BR</option>
           <option value="2" selected>2 BR</option>
           <option value="3">3 BR</option>
-          <option value="3">4 BR</option>
+          <option value="4">4 BR</option>
         </select>
       </div>
 
       <div>
         <label for="inputGroupSelect01">&nbsp;Number of Guests</label>
-        <select class="">
+        <select id="peopleInput">
           <option value="blank"></option>
           <option value="1">1</option>
           <option value="2" selected>2</option>
           <option value="3">3</option>
-          <option value="3">4</option>
+          <option value="4">4</option>
         </select>
       </div>
 
       <div class="form-group">
         <label for="exampleInputEmail1">Check In</label>
         <input type="date" id="checkInDate" />
+      </div>
+      <div class="form-group">
         <label for="exampleInputEmail1">Check Out</label>
         <input type="date" id="checkOutDate" />
       </div>
@@ -132,66 +134,6 @@
         Submit
       </button>
     </form>
-    <!-- booking form -->
-    <!-- 
-       
-       <div class="container">
-        <div class="row">
-          <div class="col-lg-6" id="formcss">
-            <h2>Booking Detail</h2>
-    
-        
-        <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">First Name</label>
-            <input type="text" class="form-control" id="firstNameInput" />
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Last Name</label>
-            <input type="text" class="form-control" id="lastNameInput" />
-          </div>
-          <div class="form-group">
-              <label for="exampleInputEmail1">Email</label>
-              <input type="text" class="form-control" value =".com" id="emailInput" />
-            </div>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Phone</label>
-              <input type="text" class="form-control" id="phoneNumberInput" />
-          <div class="form-group">
-            <label for="exampleInputEmail1">Booking Date</label>
-            <input type="date" class="form-control" id="bookingDate" />
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Trip Date</label>
-            <input type="date" class="form-control" id="tripDate" />
-            </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Location</label>
-            <input type="text" class="form-control" id="locationBooked" />
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Room Booked</label>
-            <input type="text" class="form-control" id="roomBooked" />
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Booking Price</label>
-            <input type="text" value="$ "class="form-control" id="bookingPrice" />
-          
-          </div>
-        </form>
-          <button class="btn btn-primary" id="submitButton" type="submit">
-            Submit
-          </button>
-          
-          <button id="logOut" class="btn btn-primary btn-action">
-              Log Out
-            </button>
-       
-       
-    
-    </div>
-    </div>
-    </div> -->
 
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
     <script

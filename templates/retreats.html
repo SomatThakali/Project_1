@@ -28,20 +28,10 @@
   <body>
     <header>
       <nav class="navbar navbar-expand-md">
-        <a class="navbar-brand" href="index.html">
-          <h1 id="blue-llama-heading" class="display-4">
-            BLUE LLAMA <span id="retreats-heading">Retreats</span>
-          </h1>
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+          <a class="navbar-brand" href="index.html">
+            <h1 id="blue-llama-heading" class="display-4">BLUE LLAMA <span id="retreats-heading">Retreats</span></h1>
+          </a>
+        <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div
@@ -49,30 +39,12 @@
           id="navbarNavAltMarkup"
         >
           <div class="navbar-nav nav">
-            <a class="nav-item nav-link display-4" id="home" href="index.html"
-              >Home</a
-            >
-            <a
-              class="nav-item nav-link display-4"
-              id="location"
-              href="location.html"
-              >Location</a
-            >
-            <a
-              class="nav-item nav-link display-4"
-              id="retreats"
-              href="retreats.html"
-              >The Retreats</a
-            >
-            <a class="nav-item nav-link display-4" id="book" href="booking.html"
-              >Book Now</a
-            >
-            <a
-              class="nav-item nav-link display-4"
-              id="signIn"
-              href="signUp.html"
-              >Sign-In/ Register</a
-            >
+
+              <a class="nav-item nav-link display-4" id="home" href="index.html">Home</a>
+              <a class="nav-item nav-link display-4" id="location" href="location.html">Location</a>
+              <a class="nav-item nav-link display-4" id="retreats" href="retreats.html">The Retreats</a>
+              <a class="nav-item nav-link display-4" id="book" href="signUp.html">Book Now</a>
+              <a class="nav-item nav-link display-4" id="signIn" href="signUp.html">Signup/Login</a>
           </div>
         </div>
       </nav>
@@ -89,78 +61,67 @@
             alt="grand-central"
           />
         </div>
-        <div class="col-md-5">
-          <h2 class="col-4-h2">Grand Central Nights</h2>
-          <p class="col-4-text">
-            "In the subterranean depths of Manhattan, a huge space was carved
-            out, where trains could be boarded from platforms at two different
-            levels. Grand Central, the world's loveliest station."
-            <br />
-            <span>-David Cannadine</span>
-          </p>
-          <p class="col-4-price">$789</p>
-          <br />
-          <a href="signUp.html" class="btn btn-warning book-now">Book Now</a>
-          <button
-            type="button"
-            class="btn btn-dark learn-more"
-            href="learn_gc.html"
-          >
-            Learn More
-          </button>
-        </div>
-      </div>
-      <br />
-      <div class="row">
-        <div class="col-md-7">
-          <img
-            id="central-park"
-            src="../assets/images/centralpark.jpg"
-            alt="grand-central"
-          />
-        </div>
-        <div class="col-md-5">
-          <h2 class="col-4-h2">Central Park Nights</h2>
-          <p class="col-4-text">
-            "There is no place like it, no place with an atom of its glory,
-            pride, and exultancy."
-            <br />
-            <span>-Walt Whitman</span>
-          </p>
-          <p class="col-4-price">$658</p>
-          <br />
-          <a href="signUp.html" class="btn btn-warning book-now">Book Now</a>
-          <button type="submit" class="btn btn-dark learn-more">
-            Learn More
-          </button>
-        </div>
-      </div>
-      <br />
-      <div class="row">
-        <div class="col-md-7">
-          <img
-            id="highline"
-            src="../assets/images/highline.jpeg"
-            alt="grand-central"
-          />
-        </div>
-        <div class="col-md-5">
-          <h2 class="col-4-h2">Highline Nights</h2>
-          <p class="col-4-text">
-            “It is always the city seen for the first time, in its first wild
-            promise of all the mystery and the beauty in the world.”
-            <span>-F. Scott Fitzgerald</span>
-          </p>
 
-          <p class="col-4-price">$500</p>
-          <br />
+        <div class="col-md-5 info">
+          <h2 class="col-5-h2">Grand Central Nights</h2>
+          <p class="col-5-text">"In the subterranean depths of Manhattan, a huge space was 
+            carved out, where trains could be boarded from platforms at two 
+            different levels. Grand Central, the world's loveliest station."
+          <br>
+          <span>-David Cannadine</span></p>
+          <span class="col-5-price">$789</span>
+          <br>
+          <a href="signUp.html" class="btn btn-warning book-now">Book Now</a>
+          <a href="learn_gc.html" class="btn btn-dark learn-more">Learn More</a>
+        </div>
+      </div>
+      <br>
+
+      <div class="row">
+        <div class="col-md-7">
+          <img id="central-park" src="../assets/images/centralpark.jpg" alt="central-park">
+        </div>
+        <div class="col-md-5 info">
+          <h2 class="col-5-h2">Central Park Nights</h2>
+          <p class="col-5-text">"There is no place like it, no place with an atom of its glory, pride, and exultancy." 
+          <br>
+          <span>-Walt Whitman</span></p>
+          <span class="col-5-price">$658</span>
+          <br>
+          <a href="signUp.html" class="btn btn-warning book-now">Book Now</a>
+          <a href="#" class="btn btn-dark learn-more">Learn More</a>
+        </div>
+      </div>
+      <br/>
+      <div class="row">
+        <div class="col-md-7">
+
+          <img id="highline" src="../assets/images/highline.jpeg" alt="highline">
+        </div>
+        <div class="col-md-5 info">
+          <h2 class="col-5-h2">Governor's Island Nights</h2>
+          <p class="col-5-text">“It is always the city seen for the first time, in its first wild promise of all the mystery and the beauty in the world.”
+          <span>-F. Scott Fitzgerald</span></p>
+          <span class="col-5-price">$500</span>
+          <br>
+          <a href="signUp.html" class="btn btn-warning book-now">Book Now</a>
+          <a href="#" class="btn btn-dark learn-more">Learn More</a>
+          <br>
+          <br>
           <a href="signUp.html" class="btn btn-warning book-now">Book Now</a>
           <button type="button" class="btn btn-dark learn-more">
             Learn More
           </button>
+
         </div>
       </div>
     </div>
+    <br>
+    <br>
+    <!-- footer -->
+    <div class="card-footer text-black text-center">
+      <p id="footer-text">© 2019 Blue Llama </p>    
+    </div> 
 
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
     <script

@@ -19,7 +19,7 @@
             <a class="navbar-brand" href="index.html">
             <h1 id="blue-llama-heading" class="display-4">BLUE LLAMA <span id="retreats-heading">Retreats</span></h1>
             </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
@@ -27,8 +27,8 @@
                 <a class="nav-item nav-link display-4" id="home" href="index.html">Home</a>
                 <a class="nav-item nav-link display-4" id="location" href="location.html">Location</a>
                 <a class="nav-item nav-link display-4" id="retreats" href="retreats.html">The Retreats</a>
-                <a class="nav-item nav-link display-4" id="book" href="booking.html">Book Now</a>
-                <a class="nav-item nav-link display-4" id="signIn" href="signUp.html">Sign-In/ Register</a>
+                <a class="nav-item nav-link display-4" id="book" href="signUp.html">Book Now</a>
+                <a class="nav-item nav-link display-4" id="signIn" href="signUp.html">Signup/Login</a>
             </div>
         </div> 
         </nav>
@@ -36,11 +36,11 @@
 
     <div id="gc_information" class="container container-fluid">
         <div class="row">
-            <div class="col-12">
+            <div class="col-lg-12">
                 <div id="gc_photo" >
-                    <img id="image_gc" src="../assets/images/grandcentra.jpeg" alt="gc_image">
+                    <img id="image_gc" src="../assets/images/grandcentraceil.jpg" alt="gc_image">
                 </div>
-                <h2 id="gc_learnmore_h2">GRAND CENTRAL NIGHTS</h2>
+                <h2 id="gc-learnmore-h2">GRAND CENTRAL NIGHTS</h2>
             </div>
         </div>
 
@@ -53,14 +53,79 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="container">
-        <div class="row">
-            <p></p>
+        <div id="accomodation" class="container">
+            <h4 id="accomodation-text-h4">WHERE YOU WILL STAY</h4>
+            <div id="accomodation-row" class="row">
+                <div class="col-lg-7">
+                    <img id="glamping-grand-central" src="../assets/images/glamping_grandcentral.jpg" alt="grand-central-tent">
+                </div>
+                <div class="col-lg-5">
+                <h6 id="accomodation_h6">SUMMIT TENTS</h6>
+                <p id="accomodation_p">Where luxury and rustic style meet. Summit Tents provide privacy and 
+                    the ultimate elevated camping experience.
+                </p>
+                <ul id="accomodation_list">
+                    <li class="accomodation_list_details">King bed or two single beds (a rollaway bed can 
+                    be added upon request at an additional cost of $100)</li>
+                    <li class="accomodation_list_details">1,500 thread-count linens, down comforter, and 
+                    designer-curated blanket</li>
+                    <li class="accomodation_list_details">Private, en suite bathroom with rain-style shower, 
+                    full flush toilet, and hot running water</li>
+                    <li class="accomodation_list_details">Complimentary dining and cocktails</li>
+                    <li class="accomodation_list_details">Environmentally-friendly spa bath products and 
+                    amenities,spa robes, and plush Turkish towels</li>
+                </ul>
+                </div>
+            </div>
         </div>
 
+        <div id="dining" class="container">
+            <h4 id="menu-text-h4">NORDIC DINING EXPERIENCE</h4>
+            <div id="dining-row" class="row">
+                <div id="dining-col" class="col-lg-7">
+                    <img id="gc-dining-img" src="../assets/images/agern-nyc.jpg" alt="dining">
+                </div>
+                <div class="col-lg-5">
+                    <h6 id="dining_h6">DINNER</h6>
+                    <p id="dining-description">Agern, meaning “Acorn” in Danish, is a season-driven restaurant and bar, 
+                        located at Grand Central Terminal, tucked away between Vanderbilt Hall
+                        and the 42nd street southwestern passageway entrance. 
+                        <br>
+                        <br>
+                        The menu, from the hands of Icelandic head chef Gunnar Gíslason and his team, 
+                        features farmed and wild ingredients from the New York State region exposed to 
+                        time-honored techniques, and flavors rooted in Nordic Cuisine.
+                        <br>
+                        <br>
+                        Gíslason and his team will be serving you and other guests a ten course meal, 
+                        curated for the occasion, at the heart of the campsite in the main concourse.
+                    </p>
+                </div>   
+            </div>
+        </div>
+
+        <div id="directions" class="container">
+            <h4 id="directions-text-h4">HOW TO GET THERE</h4>
+            <div id="directions-text" class="row">
+                <div class="col-lg-12">
+                    <p id="directions-p">Grand Central Terminal is located at 89 E. 42nd Street at Park Avenue and is 
+                    accessible by subway, bus, train and airport shuttle.
+                    There are a number of public parking garages located close to the Terminal.
+                    </p>
+                </div>
+                <div id="map-row" class="row">
+                    <div class="col-lg-12">
+                        <img id="google-map" src="../assets/images/placeholder_map.png" alt="place-holder-map">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <div class="card-footer text-black text-center">
+        <p id="footer-text">© 2019 Blue Llama </p>    
+    </div> 
 
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -15,24 +15,12 @@ var firstName = "";
 var lastName = "";
 var email = "";
 var phoneNumber = "";
-//dates
-var bookingDate = "";
-var tripDate = "";
-//location & room
-var locationBooked = "";
-var roomBooked = "";
-//price
-var bookingPrice = 0;
-var currentUser;
-// firebase.auth().onAuthStateChanged(function(user) {
-//   if (user) {
-//     currentUser = user;
-//     console.log(currentUser);
-//     console.log(user.uid);
-//   } else {
-//     console.log("not logged in");
-//   }
-// });
+//booking info
+var room = 0;
+var numberOfGuest = 0;
+var checkInDate = "";
+var checkOutDate = "";
+var comments = "";
 
 //on submit button click
 $("#submitButton").on("click", function(event) {
@@ -51,22 +39,22 @@ $("#submitButton").on("click", function(event) {
   phoneNumber = $("#phoneNumberInput")
     .val()
     .trim();
-  //dates
-  bookingDate = $("#bookingDate")
+
+  room = $("#roomInput")
     .val()
     .trim();
-  tripDate = $("#tripDate")
+  numberOfGuest = $("#peopleInput")
     .val()
     .trim();
-  //location & room
-  locationBooked = $("#locationBooked")
+
+  checkInDate = $("#checkInDate")
     .val()
     .trim();
-  roomBooked = $("#roomBooked")
+  checkOutDate = $("#checkOutDate")
     .val()
     .trim();
-  //price
-  bookingPrice = $("#bookingPrice")
+
+  comments = $("#comments")
     .val()
     .trim();
 
@@ -79,15 +67,12 @@ $("#submitButton").on("click", function(event) {
     Last_name: lastName,
     Email: email,
     Phone_number: phoneNumber,
-    //dates
-    Date_purchased: bookingDate,
-    Trip_date: tripDate,
-    //location & room
-    Location: locationBooked,
-    Room: roomBooked,
-    //price
-    Total_price: bookingPrice
-    // userId: currentUser.uid
+    // Details
+    room: room,
+    Number_Of_Guest: numberOfGuest,
+    check_In_Date: checkInDate,
+    check_Out_Date: checkOutDate,
+    special_Request: comments
   });
 
   window.location = "../templates/confirmation.html";
@@ -99,7 +84,7 @@ database.ref().once(
   function(snapshot) {
     if (firebase.auth().currentUser) {
       var myUserId = firebase.auth().currentUser.uid;
-      console.log(currentUser);
+      // console.log(currentUser);
 
       var myUserIdEmail = firebase.auth().currentUser.email;
       $("#userMessage").text("Welcome " + myUserIdEmail);
@@ -131,24 +116,35 @@ function renderRow(snap) {
   var firstNameTd = $("<td id='firstNameDisplay'>").text(child.First_name);
   var lastNameTd = $("<td id='lastNameDisplay'>").text(child.Last_name);
   var emailTd = $("<td id='emailDisplay'>").text(child.Email);
-  var tripDateTd = $("<td id='tripDateDisplay'>").text(child.Trip_date);
   var phoneNumberTd = $("<td id='tripDateDisplay'>").text(child.Phone_number);
-  var datePurchasedTd = $("<td id='bookingDateDisplay'>").text(
-    child.Date_purchased
+  var roomTd = $("<td id='roomDisplay'>").text(child.room);
+  var numberOfGuestTd = $("<td id='numberOfGuestDisplay'>").text(
+    child.Number_Of_Guest
   );
-  var locationTd = $("<td id='locationBookedDisplay'>").text(child.Location);
-  var roomBookedTd = $("<td id='roomBookedDisplay'>").text(child.roomBooked);
+  var checkInDateTd = $("<td id='checkInDateDisplay'>").text(
+    child.check_In_Date
+  );
+  var checkOutDateTd = $("<td id='checkOutDateDisplay'>").text(
+    child.check_Out_Date
+  );
+  var specialRequestTd = $("<td id='specialRequestDisplay'>").text(
+    child.special_Request
+  );
+  console.log("room Number " + child.room);
+  console.log("checkInDate " + child.check_In_Date);
+  // var tripDateTd = $("<td id='tripDateDisplay'>").text(child.Trip_date);
 
   // Append the newly created table data to the table row
   tRow.append(
     firstNameTd,
     lastNameTd,
     emailTd,
-    tripDateTd,
     phoneNumberTd,
-    datePurchasedTd,
-    locationTd,
-    roomBookedTd
+    roomTd,
+    numberOfGuestTd,
+    checkInDateTd,
+    checkOutDateTd,
+    specialRequestTd
   );
   // Append the table row to the table body
   $("tbody").append(tRow);

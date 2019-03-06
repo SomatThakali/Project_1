@@ -138,12 +138,16 @@ function showHideButtonsForSignUp() {
   $("#createAccount").hide();
   $("#login").hide();
   $("#forgot-password").hide();
+  $("#please-login").hide();
+  $("#register").show();
+  f;
 }
 function hidePasswordReset() {
   $("#password-reset").hide();
   $("#forgot-password").hide();
   $(".name").hide();
   $("#signUp").hide();
+  $("#register").hide();
 }
 
 hidePasswordReset();
@@ -152,6 +156,8 @@ function makeFormEmpty() {
   $("#email").val("");
   $("#password").val("");
 }
+
+makeFormEmpty();
 
 // $("#google-sign-in").on("click", function() {
 //   var provider = new firebase.auth.GoogleAuthProvider();

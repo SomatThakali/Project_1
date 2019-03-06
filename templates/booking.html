@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -34,63 +35,68 @@
         </nav>
       </header> 
 
+    <form>
+      <h2>Booking & contact</h2>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="firstNameInput" name="name" />
+        <input type="text" id="lastNameInput" name="name" />
+      </div>
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="emailInput" name="email" />
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phoneNumberInput" name="phone" />
+      </div>
 
-       <!-- booking form -->
-       <div class="container">
-        <div class="row">
-          <div class="col-lg-12" id="formcss">
-            <h3 id="booking-details-h3">Booking Details</h3>
-    
-        <form id="form-input">
-          <div class="form-group">
-            <label for="exampleInputEmail1">First Name</label>
-            <input type="text" class="form-control" id="firstNameInput" />
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Last Name</label>
-            <input type="text" class="form-control" id="lastNameInput" />
-          </div>
-          <div class="form-group">
-              <label for="exampleInputEmail1">Email</label>
-              <input type="text" class="form-control" value =".com" id="emailInput" />
-            </div>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Phone</label>
-              <input type="text" class="form-control" id="phoneNumberInput"/>
-            </div>
-            <div class="form-group">
-            <label for="exampleInputEmail1">Booking Date</label>
-            <input type="date" class="form-control" id="bookingDate" />
-            </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Trip Date</label>
-            <input type="date" class="form-control" id="tripDate" />
-            </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Location</label>
-            <input type="text" class="form-control" id="locationBooked" />
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Room Booked</label>
-            <input type="text" class="form-control" id="roomBooked" />
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Booking Price</label>
-            <input type="text" value="$ "class="form-control" id="bookingPrice" />
-          </div>
-    
-          <button id="submitButton" class="btn" type="submit">Submit</button>
-          <button id="logOut" class="btn btn-action">Log Out</button>
-      
-        </form>
-    
-    </div>
-    </div>
-    </div>
-         
+      <h2>Details</h2>
+      <div>
+        <label for="inputGroupSelect01">&nbsp;Room Type</label>
+        <select id="roomInput">
+          <option value="blank"></option>
+          <option value="1">1 BR</option>
+          <option value="2" selected>2 BR</option>
+          <option value="3">3 BR</option>
+          <option value="4">4 BR</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="inputGroupSelect01">&nbsp;Number of Guests</label>
+        <select id="peopleInput">
+          <option value="blank"></option>
+          <option value="1">1</option>
+          <option value="2" selected>2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Check In</label>
+        <input type="date" id="checkInDate" />
+
+        <label for="exampleInputEmail1">Check Out</label>
+        <input type="date" id="checkOutDate" />
+      </div>
+
+      <div>
+        <label for="request">Special Requests</label>
+        <textarea name="comments" class="floatLabel" id="comments"></textarea>
+      </div>
+
+      <button class="btn btn-primary" id="submitButton" type="submit">
+        Submit
+      </button>
+    </form>
+
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="../assets/javascript/booking.js"></script>
   </body>
 </html>

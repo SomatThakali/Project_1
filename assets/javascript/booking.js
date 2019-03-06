@@ -6,6 +6,7 @@ var config = {
   storageBucket: "blue-lama-retreat-7a0c6.appspot.com",
   messagingSenderId: "106620423709"
 };
+
 firebase.initializeApp(config);
 
 var database = firebase.database();
@@ -50,6 +51,7 @@ $("#submitButton").on("click", function(event) {
   checkInDate = $("#checkInDate")
     .val()
     .trim();
+    
   checkOutDate = $("#checkOutDate")
     .val()
     .trim();
@@ -85,7 +87,6 @@ database.ref().once(
     if (firebase.auth().currentUser) {
       var myUserId = firebase.auth().currentUser.uid;
       // console.log(currentUser);
-
       var myUserIdEmail = firebase.auth().currentUser.email;
       $("#userMessage").text("Welcome " + myUserIdEmail);
 
@@ -155,3 +156,10 @@ $("#logOut").on("click", function() {
   firebase.auth().signOut();
   window.location = "../templates/index.html";
 });
+
+function hideSignIn() {
+  $("#signIn").hide()
+  $("#account").show()
+};
+
+hideSignIn()

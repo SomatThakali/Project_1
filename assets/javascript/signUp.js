@@ -26,7 +26,7 @@ $("#forgot-password").on("click", function() {
         Swal.fire({
           type: "error",
           title: "Oops...",
-          text: errorMessage
+          text: "Please enter your information"
         });
       });
   });
@@ -53,7 +53,7 @@ $("#login").on("click", function() {
         Swal.fire({
           type: "error",
           title: "Oops...",
-          text: errorMessage
+          text: "Please enter your information"
         });
       }
       // console.log(error);
@@ -66,6 +66,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     // $("#userMessage").text("Welcome " + myUserIdEmail);
     window.location = "../templates/bookNowModal.html";
     console.log("I am logged in");
+
   } else {
     console.log("not logged in");
   }
@@ -96,7 +97,7 @@ $("#createAccount").on("click", function(event) {
           Swal.fire({
             type: "error",
             title: "Oops...",
-            text: errorMessage
+            text: "Please enter your information"
           });
         }
         // console.log(error);
@@ -148,10 +149,20 @@ function hidePasswordReset() {
 
 hidePasswordReset();
 
-function makeFormEmpty() {
+function makeFormEmpty() { 
   $("#email").val("");
   $("#password").val("");
 }
+
+function hideAccount() {
+  $("#account").hide()
+  $("#signIn").show()
+};
+
+hideAccount();
+
+
+// $("#account").hide();
 
 // $("#google-sign-in").on("click", function() {
 //   var provider = new firebase.auth.GoogleAuthProvider();

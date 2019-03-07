@@ -17,7 +17,17 @@ for (i = 0; i < locTitle.length; i++){
       document.getElementById(locId[i]));
   popup.setMap(map);
 }
-}
+};
+
+var bookBtn = "<a href='signUp.html' class='btn btn-warning book-now'>Book Now</a>";
+var learnBtn = "<a href='learn_gc.html' class='btn btn-dark learn-more'>Learn More</a>";
+ 
+$("#loc1Btn").on('click', function() {
+    console.log("part 1 init");
+    $("#loc1").html(
+      bookBtn + "<span>" + learnBtn
+    );
+  });
 
 /**
  * Returns the Popup class.

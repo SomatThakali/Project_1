@@ -17,6 +17,7 @@ var lastName = "";
 var email = "";
 var phoneNumber = "";
 //booking info
+var locationChoice = "";
 var room = 0;
 var numberOfGuest = 0;
 var checkInDate = "";
@@ -40,22 +41,21 @@ $("#submitButton").on("click", function (event) {
   phoneNumber = $("#phoneNumberInput")
     .val()
     .trim();
-
+  locationChoice = $("#locationInput")
+    .val()
+    .trim();
   room = $("#roomInput")
     .val()
     .trim();
   numberOfGuest = $("#peopleInput")
     .val()
     .trim();
-
   checkInDate = $("#checkInDate")
     .val()
     .trim();
-
   checkOutDate = $("#checkOutDate")
     .val()
     .trim();
-
   comments = $("#comments")
     .val()
     .trim();
@@ -70,6 +70,7 @@ $("#submitButton").on("click", function (event) {
     Email: email,
     Phone_number: phoneNumber,
     // Details
+    locationChoice: locationChoice,
     room: room,
     Number_Of_Guest: numberOfGuest,
     check_In_Date: checkInDate,
@@ -129,45 +130,38 @@ database.ref().once(
 function renderRow(snap) {
   var child = snap.val();
 
-  var tRow = $("<tr>");
-
-  var firstNameTd = $("<td id='firstNameDisplay'>").text(child.First_name);
-  var lastNameTd = $("<td id='lastNameDisplay'>").text(child.Last_name);
-  var emailTd = $("<td id='emailDisplay'>").text(child.Email);
-  var phoneNumberTd = $("<td id='tripDateDisplay'>").text(child.Phone_number);
-  var roomTd = $("<td id='roomDisplay'>").text(child.room);
-  var numberOfGuestTd = $("<td id='numberOfGuestDisplay'>").text(
-    child.Number_Of_Guest
+  var nameLi = $("<li id='list-name' class='list-group-item'>").text("Name: " + child.First_name + child.Last_name);
+  var emailLi = $("<li id='emailDisplay' class='list-group-item'>").text("Email: " + child.Email);
+  var phoneNumberLi = $("<li id='tripDateDisplay' class='list-group-item'>").text("Phone Number : " + child.Phone_number);
+  var locationLi = $("<li id='locationDisplay' class='list-group-item'>").text("Location: " + child.locationChoice);
+  var roomLi = $("<li id='roomDisplay' class='list-group-item'>").text("Rooms: " + child.room);
+  var numberOfGuestLi = $("<li id='numberOfGuestDisplay' class='list-group-item'>")
+  .text("Number of Guests: " + child.Number_Of_Guest);
+  var checkInDateLi = $("<li id='checkInDateDisplay' class='list-group-item'>")
+  .text("Check In: " + child.check_In_Date);
+  var checkOutDateLi = $("<li id='checkOutDateDisplay' class='list-group-item'>").text(
+    "Check Out: " + child.check_Out_Date
   );
-  var checkInDateTd = $("<td id='checkInDateDisplay'>").text(
-    child.check_In_Date
-  );
-  var checkOutDateTd = $("<td id='checkOutDateDisplay'>").text(
-    child.check_Out_Date
-  );
-  var specialRequestTd = $("<td id='specialRequestDisplay'>").text(
-    child.special_Request
-  );
+    var specialRequestLi= $("<li id='specialRequestDisplay' class='list-group-item'>").text(
+      "Special Requests: " + child.special_Request
+    );
   console.log("room Number " + child.room);
   console.log("checkInDate " + child.check_In_Date);
   // var tripDateTd = $("<td id='tripDateDisplay'>").text(child.Trip_date);
 
   // Append the newly created table data to the table row
 
-  tRow.append(
-    firstNameTd,
-    lastNameTd,
-    emailTd,
-    phoneNumberTd,
-    roomTd,
-    numberOfGuestTd,
-    checkInDateTd,
-    checkOutDateTd,
-    specialRequestTd
+  $("ul").append(
+    nameLi,
+    emailLi,
+    phoneNumberLi,
+    locationLi,
+    roomLi,
+    numberOfGuestLi,
+    checkInDateLi,
+    checkOutDateLi,
+    specialRequestLi,
   );
-  // Append the table row to the table body
-  $("tbody").append(tRow);
-
 }
 
 
@@ -187,9 +181,4 @@ $("#logOut").on("click", function () {
   window.location = "../templates/index.html";
 });
 
-function hideSignIn() {
-  $("#signIn").hide()
-  $("#account").show()
-};
 
-hideSignIn()

@@ -37,26 +37,21 @@
     </nav>
   </header>
 
-  <table id="myTable" class="table">
-    <thead>
-      <tr>
-        <th scope="col">First Name</th>
-        <th scope="col">Last Name</th>
-        <th scope="col">Email</th>
-        <th scope="col">Phone Number</th>
-        <th scope="col">Room Type</th>
-        <th scope="col">Number of Guest</th>
-        <th scope="col">Check In Date</th>
-        <th scope="col">Check Out Date</th>
-        <th scope="col">Special Request</th>
-      </tr>
-    </thead>
-
-    <tbody></tbody>
-  </table>
-
-  <div class="image"></div>
-
+  <div class="container reservation-div">
+    <!-- <h3 id="confirmation-h3"></h3> -->
+    <div class="card confirmation-card">
+      <div class="card-body">
+        <h3 class="card-title">Your Confirmation Details</h3>
+        <p id="card-h3p-text" class="card-text">Thank you for booking with us</p>
+      </div>
+      <ul class="list-group list-group-flush">
+      </ul>
+    </div>
+  </div>
+  <div class="container button-div text-center">
+    <button id="logOut" class="btn btn-dark btn-action">Log Out</button>
+  </div>
+  <br>
 
   <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

@@ -5,128 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <title>Blue Llama</title>
-
-     <link rel="stylesheet" href="../assets/css/googlemaps.css"> 
-     <link rel="stylesheet" href="../assets/css/style.css">
-
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="../assets/javascript/googlemaps.js"></script>
-    <script src="../assets/javascript/weather.js"></script>
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Blue Llama</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/googlemaps.css"> 
   </head>
 
   <body>
     <!-- navbar -->
-      <header>
-          <nav class="navbar navbar-expand-md">
-              <a class="navbar-brand" href="index.html">
-                <h1 id="blue-llama-heading" class="display-4">BLUE LLAMA <span id="retreats-heading">Retreats</span></h1>
-              </a>
-            <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-              <div class="navbar-nav nav">
-                  <a class="nav-item nav-link display-4" id="home" href="index.html">Home</a>
-                  <a class="nav-item nav-link display-4" id="location" href="location.html">Location</a>
-                  <a class="nav-item nav-link display-4" id="retreats" href="retreats.html">The Retreats</a>
-                  <a class="nav-item nav-link display-4" id="book" href="signUp.html">Book Now</a>
-                  <a class="nav-item nav-link display-4" id="signIn" href="signUp.html">Signup/Login</a>
-              </div>
-            </div> 
-          </nav>
-        </header> 
+    <header>
+      <nav class="navbar navbar-expand-md">
+        <a class="navbar-brand" href="index.html">
+          <h1 id="blue-llama-heading" class="display-4">BLUE LLAMA <span id="retreats-heading">Retreats</span></h1>
+        </a>
+        <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav nav">
+            <a class="nav-item nav-link display-4" id="home" href="index.html">Home</a>
+            <a class="nav-item nav-link display-4" id="location" href="location.html">Location</a>
+            <a class="nav-item nav-link display-4" id="retreats" href="retreats.html">The Retreats</a>
+            <a class="nav-item nav-link display-4" id="book" href="signUp.html">Book Now</a>
+            <a class="nav-item nav-link display-4" id="signIn" href="signUp.html">Signup/Login</a>
+            <a class="nav-item nav-link display-4" id="account" href="#">Account</a>
+          </div>
+        </div> 
+      </nav>
+    </header> 
     <!-- google maps container -->
-      <div id="map"></div>
-      
+    <div id="map"></div> 
       <!-- #loc1 content -->
-      <div id="loc1">
-        Central Park
-        <button type="button" class="btn btn-primary">Book now!</button>
-      </div>
+    <div id="loc1">
+      <button id="loc1Btn" type="button" class="btn btn-primary">Central Park</button>
+    </div>
+    <!-- #loc2 content -->
+    <div id="loc2">
+      <button id="loc2Btn" type="button" class="btn btn-primary">Grand Central Station</button>
+    </div>
+    <!-- #loc3 content -->
+    <div id="loc3">
+      <button id="loc3Btn" type="button" class="btn btn-primary">The High Line</button>
+    </div>
 
-      <!-- #loc2 content -->
-      <div id="loc2">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <h2>Grand Central Nights</h2>
-            </div>
-          </div>
-          <br/>
-          <div class="row">
-            <div class="col-md-12">
-              "In the subterranean depths of Manhattan, a huge space was carved
-              out, where trains could be boarded from platforms at two different
-              levels. Grand Central, the world's loveliest station."
-              <br/>
-              <span>-David Cannadine</span>
-            </div>
-          </div>
-          <br/>
-          <div class="row">
-                  <div class="col-md-4"></div>
-                  <div class="col-md-4">
-                      <h3>$789</h3>
-                  </div>
-                  <div class="col-md-4"></div>
-              </div>
-              <br/>
-              <div class="row">
-                  <div class="col-md-1"></div>
-                  <div class="col-md-6">
-                  <a href="signUp.html" type="button" class="btn btn-warning book-now">Book Now</a>
-                  </div>
-                  <div class="col-md-4">
-                  <a href="learn_gc.html" type="button" class="btn btn-dark learn-more">Learn More</a> 
-                  </div>
-                  <div class="col-md-1"></div>
-                </div>
-              </div>
-            </div>
+    <!-- #weatherContainer -->
+    <div id="weather">
+    <!-- #weatherDisplay -->
+      <ul class="list-group">
+      <!-- #weekDisplay -->
+        <li class="list-group-item">
+          <button id="date1" type="button" class="btn btn-outline-info">Sunday</button>
+          <span style="margin-right:9%"></span>
+          <button id="date2" type="button" class="btn btn-outline-info">Monday</button>
+          <span style="margin-right:9%"></span>
+          <button id="date3" type="button" class="btn btn-outline-info">Tuesday</button>
+          <span style="margin-right:9%"></span>
+          <button id="date4" type="button" class="btn btn-outline-info">Wedndsday</button>
+          <span style="margin-right:9%"></span>
+          <button id="date5" type="button" class="btn btn-outline-info">Thursday</button>
+          <span style="margin-right:9%"></span>
+          <button id="date6" type="button" class="btn btn-outline-info">Friday</button>
+          <span style="margin-right:9%"></span>
+          <button id="date7" type="button" class="btn btn-outline-info">Saturday</button>
+        </li>
+        <!-- END #weekDisplay END -->
+        <!-- #tempDisplay -->
+        <li class="list-group-item">
+          <h5 id="tempDisplay"></h5>
+        </li><!-- END #tempDisplay END  -->
+        <!-- #forecastDisplay -->
+        <li class="list-group-item">
+          <p></p>
+        </li>
+        <!-- END #forecastDisplay END -->
+      </ul><!-- END #weatherDisplay END -->
+    </div><!-- END #weatherContainer END -->
 
-            <!-- #loc3 content -->
-            <div id="loc3">
-              The High Line
-            </div>
-            
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="../assets/javascript/googlemaps.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYbxI7yeH2FdCaON4DdDkNhwlIOV8QQuQ&callback=initMap" async defer></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="../assets/javascript/weather.js"></script>
 
-
-            <!-- #weatherContainer -->
-            <div id="weather">
-            <!-- #weatherDisplay -->
-            <ul class="list-group">
-              <!-- #weekDisplay -->
-                <li class="list-group-item">
-                  <button id="date1" type="button" class="btn btn-outline-info">Sunday</button>
-                  <span style="margin-right:9%"></span>
-                  <button id="date2" type="button" class="btn btn-outline-info">Monday</button>
-                  <span style="margin-right:9%"></span>
-                  <button id="date3" type="button" class="btn btn-outline-info">Tuesday</button>
-                  <span style="margin-right:9%"></span>
-                  <button id="date4" type="button" class="btn btn-outline-info">Wedndsday</button>
-                  <span style="margin-right:9%"></span>
-                  <button id="date5" type="button" class="btn btn-outline-info">Thursday</button>
-                  <span style="margin-right:9%"></span>
-                  <button id="date6" type="button" class="btn btn-outline-info">Friday</button>
-                  <span style="margin-right:9%"></span>
-                  <button id="date7" type="button" class="btn btn-outline-info">Saturday</button>
-                </li><!-- END #weekDisplay END -->
-                <!-- #tempDisplay -->
-                <li class="list-group-item">
-                  <h5 id="tempDisplay"></h5></li><!-- END #tempDisplay END  -->
-                <!-- #forecastDisplay -->
-                <li class="list-group-item">
-                  <p></p></li><!-- END #forecastDisplay END -->
-              </ul><!-- END #weatherDisplay END -->
-            </div><!-- END #weatherContainer END -->
-
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYbxI7yeH2FdCaON4DdDkNhwlIOV8QQuQ&callback=initMap" async defer></script>
-        </body>
+  </body>
 </html>

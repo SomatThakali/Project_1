@@ -8,21 +8,21 @@ var config = {
 };
 firebase.initializeApp(config);
 
-$("#forgot-password").on("click", function() {
+$("#forgot-password").on("click", function () {
   showHideButtonsForForgotPassword();
   console.log("I am clicked");
-  $("#password-reset").on("click", function(event) {
+  $("#password-reset").on("click", function (event) {
     var email = $("#email").val();
     firebase
       .auth()
       .sendPasswordResetEmail(email)
-      .then(function() {
+      .then(function () {
         Swal.fire({
           type: "success",
           text: "Password Reset Email Sent!!"
         });
       })
-      .catch(function(error) {
+      .catch(function (error) {
         Swal.fire({
           type: "error",
           title: "Oops...",
@@ -32,14 +32,14 @@ $("#forgot-password").on("click", function() {
   });
 });
 //call back function
-$("#login").on("click", function() {
+$("#login").on("click", function () {
   var email = $("#email").val();
   var password = $("#password").val();
 
   firebase
     .auth()
     .signInWithEmailAndPassword(email, password)
-    .catch(function(error) {
+    .catch(function (error) {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
@@ -61,9 +61,11 @@ $("#login").on("click", function() {
   $("#forgot-password").show();
 });
 
-firebase.auth().onAuthStateChanged(function(user) {
+firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
     // $("#userMessage").text("Welcome " + myUserIdEmail);
+    $("#account").show();
+    $("#signIn").hide();
     window.location = "../templates/bookNowModal.html";
     console.log("I am logged in");
 
@@ -72,9 +74,9 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 
-$("#createAccount").on("click", function(event) {
+$("#createAccount").on("click", function (event) {
   showHideButtonsForSignUp();
-  $("#signUp").on("click", function(event) {
+  $("#signUp").on("click", function (event) {
     console.log("signUp clicked! ");
 
     var email = $("#email").val();
@@ -83,7 +85,7 @@ $("#createAccount").on("click", function(event) {
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
-      .catch(function(error) {
+      .catch(function (error) {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
@@ -131,6 +133,8 @@ function showHideButtonsForForgotPassword() {
   $("#login").hide();
   $("#forgot-password").hide();
   $("#password-reset").show();
+  $("#please-login").hide();
+  $("#passwordReset").show();
 }
 
 function showHideButtonsForSignUp() {
@@ -139,12 +143,18 @@ function showHideButtonsForSignUp() {
   $("#createAccount").hide();
   $("#login").hide();
   $("#forgot-password").hide();
+  $("#please-login").hide();
+  $("#register").show();
+  $("#passwordReset").hide();
 }
 function hidePasswordReset() {
   $("#password-reset").hide();
   $("#forgot-password").hide();
   $(".name").hide();
   $("#signUp").hide();
+  $("#register").hide();
+  $("#passwordReset").hide();
+  $("#account").hide();
 }
 
 hidePasswordReset();
@@ -154,6 +164,7 @@ function makeFormEmpty() {
   $("#password").val("");
 }
 
+<<<<<<< HEAD
 function hideAccount() {
   $("#account").hide()
   $("#signIn").show()
@@ -163,6 +174,9 @@ hideAccount();
 
 
 // $("#account").hide();
+=======
+makeFormEmpty();
+>>>>>>> master
 
 // $("#google-sign-in").on("click", function() {
 //   var provider = new firebase.auth.GoogleAuthProvider();

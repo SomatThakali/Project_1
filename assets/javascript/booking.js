@@ -24,7 +24,7 @@ var checkOutDate = "";
 var comments = "";
 
 //on submit button click
-$("#submitButton").on("click", function(event) {
+$("#submitButton").on("click", function (event) {
   console.log("submit button clicked");
   event.preventDefault();
   //guest info
@@ -78,12 +78,13 @@ $("#submitButton").on("click", function(event) {
   });
 
   window.location = "../templates/confirmation.html";
+
 });
 
 // recheck
 database.ref().once(
   "value",
-  function(snapshot) {
+  function (snapshot) {
     if (firebase.auth().currentUser) {
       var myUserId = firebase.auth().currentUser.uid;
       // console.log(currentUser);
@@ -92,21 +93,37 @@ database.ref().once(
 
       database.ref("bookings/" + myUserId).on(
         "child_added",
-        function(snapshot) {
+        function (snapshot) {
           renderRow(snapshot);
+
           console.log("in here");
         },
-        function(errorObject) {
+        function (errorObject) {
           console.log("Errors handled: " + errorObject.code);
         }
       );
+
+      database.ref("Images/" + myUserId).on(
+        "child_added",
+        function (snapshot) {
+
+          renderImage(snapshot);
+          console.log("in here");
+        },
+        function (errorObject) {
+          console.log("Errors handled: " + errorObject.code);
+        }
+      );
+
     } else {
       console.log("user not logged in");
     }
   },
-  function(errorObject) {
+  function (errorObject) {
     console.log("Errors handled: " + errorObject.code);
   }
+
+
 );
 
 function renderRow(snap) {
@@ -136,6 +153,7 @@ function renderRow(snap) {
   // var tripDateTd = $("<td id='tripDateDisplay'>").text(child.Trip_date);
 
   // Append the newly created table data to the table row
+
   tRow.append(
     firstNameTd,
     lastNameTd,
@@ -149,17 +167,74 @@ function renderRow(snap) {
   );
   // Append the table row to the table body
   $("tbody").append(tRow);
+
 }
 
-$("#logOut").on("click", function() {
+
+// function renderImage(snap) {
+//   var uploadTask = firebase.storage().ref().child('/Images/' + selectedFile.name).put(selectedFile);
+//   var downloadURL = uploadTask.snap.downloadURL;
+//   console.log(downloadURL);
+//   var profileImage = $("<img class = 'profile-image'>").attr("src", downloadURL);
+//   $(".image").imageDiv.append(profileImage);
+
+// }
+
+
+$("#logOut").on("click", function () {
   console.log("I am log out");
   firebase.auth().signOut();
   window.location = "../templates/index.html";
 });
 
+<<<<<<< HEAD
 function hideSignIn() {
   $("#signIn").hide()
   $("#account").show()
 };
 
 hideSignIn()
+=======
+
+var selectedFile;
+$("#file").on("change", function (event) {
+  // ("#uploadButton").show();
+  selectedFile = event.target.files[0];
+});
+
+var user;
+
+function upLoadFile() {
+  var myUserId = firebase.auth().currentUser.uid;
+
+  var uploadTask = firebase.storage().ref().child('/Images/' + selectedFile.name).put(selectedFile);
+  // Register three observers:
+  // 1. 'state_changed' observer, called any time the state changes
+  // 2. Error observer, called on failure
+  // 3. Completion observer, called on successful completion
+  uploadTask.on('state_changed', function (snapshot) {
+    // Observe state change events such as progress, pause, and resume
+    // See below for more detail
+  }, function (error) {
+    // Handle unsuccessful uploads
+  }, function () {
+    // Handle successful uploads on complete
+    // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+    var postKey = firebase.database().ref("images/").push().key;
+    var downloadURL = uploadTask.snapshot.downloadURL;
+
+    var updates = {};
+    var postData = {
+      url: downloadURL,
+      user: myUserId
+    }
+    updates['images/' + postKey] = postData;
+    firebase.database().ref().update(updates);
+
+    $(".upload-group")[0].before("Success!");
+    $(".upload-group").hide();
+
+  });
+
+}
+>>>>>>> master

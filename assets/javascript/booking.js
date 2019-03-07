@@ -17,7 +17,7 @@ var lastName = "";
 var email = "";
 var phoneNumber = "";
 //booking info
-var location = "";
+var locationChoice = "";
 var room = 0;
 var numberOfGuest = 0;
 var checkInDate = "";
@@ -42,7 +42,7 @@ $("#submitButton").on("click", function (event) {
     .val()
     .trim();
   //booking info
-  location = $("#locationInput")
+  locationChoice = $("#locationInput")
     .val()
     .trim();
   room = $("#roomInput")
@@ -71,7 +71,7 @@ $("#submitButton").on("click", function (event) {
     Email: email,
     Phone_number: phoneNumber,
     // Details
-    location: location,
+    location: locationChoice,
     room: room,
     Number_Of_Guest: numberOfGuest,
     check_In_Date: checkInDate,
@@ -137,7 +137,7 @@ function renderRow(snap) {
   var lastNameTd = $("<td id='lastNameDisplay'>").text(child.Last_name);
   var emailTd = $("<td id='emailDisplay'>").text(child.Email);
   var phoneNumberTd = $("<td id='tripDateDisplay'>").text(child.Phone_number);
-  var locationTd = $("<td id='locationDisplay'>").text(child.location);
+  var locationTd = $("<td id='locationDisplay'>").text(child.locationChoice);
   var roomTd = $("<td id='roomDisplay'>").text(child.room);
   var numberOfGuestTd = $("<td id='numberOfGuestDisplay'>").text(
     child.Number_Of_Guest

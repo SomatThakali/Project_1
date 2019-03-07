@@ -17,6 +17,7 @@ var lastName = "";
 var email = "";
 var phoneNumber = "";
 //booking info
+var locationChoice = "";
 var room = 0;
 var numberOfGuest = 0;
 var checkInDate = "";
@@ -40,22 +41,21 @@ $("#submitButton").on("click", function (event) {
   phoneNumber = $("#phoneNumberInput")
     .val()
     .trim();
-
+  locationChoice = $("#locationInput")
+    .val()
+    .trim();
   room = $("#roomInput")
     .val()
     .trim();
   numberOfGuest = $("#peopleInput")
     .val()
     .trim();
-
   checkInDate = $("#checkInDate")
     .val()
     .trim();
-
   checkOutDate = $("#checkOutDate")
     .val()
     .trim();
-
   comments = $("#comments")
     .val()
     .trim();
@@ -70,6 +70,7 @@ $("#submitButton").on("click", function (event) {
     Email: email,
     Phone_number: phoneNumber,
     // Details
+    location: locationChoice,
     room: room,
     Number_Of_Guest: numberOfGuest,
     check_In_Date: checkInDate,
@@ -82,7 +83,7 @@ $("#submitButton").on("click", function (event) {
 });
 
 // recheck
-database.ref().once(
+database.ref().on(
   "value",
   function (snapshot) {
     if (firebase.auth().currentUser) {
@@ -122,64 +123,20 @@ database.ref().once(
   function (errorObject) {
     console.log("Errors handled: " + errorObject.code);
   }
-
-
 );
 
 function renderRow(snap) {
   var child = snap.val();
-
-  var tRow = $("<tr>");
-
-  var firstNameTd = $("<td id='firstNameDisplay'>").text(child.First_name);
-  var lastNameTd = $("<td id='lastNameDisplay'>").text(child.Last_name);
-  var emailTd = $("<td id='emailDisplay'>").text(child.Email);
-  var phoneNumberTd = $("<td id='tripDateDisplay'>").text(child.Phone_number);
-  var roomTd = $("<td id='roomDisplay'>").text(child.room);
-  var numberOfGuestTd = $("<td id='numberOfGuestDisplay'>").text(
-    child.Number_Of_Guest
-  );
-  var checkInDateTd = $("<td id='checkInDateDisplay'>").text(
-    child.check_In_Date
-  );
-  var checkOutDateTd = $("<td id='checkOutDateDisplay'>").text(
-    child.check_Out_Date
-  );
-  var specialRequestTd = $("<td id='specialRequestDisplay'>").text(
-    child.special_Request
-  );
-  console.log("room Number " + child.room);
-  console.log("checkInDate " + child.check_In_Date);
-  // var tripDateTd = $("<td id='tripDateDisplay'>").text(child.Trip_date);
-
-  // Append the newly created table data to the table row
-
-  tRow.append(
-    firstNameTd,
-    lastNameTd,
-    emailTd,
-    phoneNumberTd,
-    roomTd,
-    numberOfGuestTd,
-    checkInDateTd,
-    checkOutDateTd,
-    specialRequestTd
-  );
-  // Append the table row to the table body
-  $("tbody").append(tRow);
-
+  $("#list-name").text("Name: " + child.First_name + child.Last_name);
+  $("#emailDisplay").text("Email: " + child.Email);
+  $("#phoneNumber").text("Phone Number : " + child.Phone_number);
+  $("#locationDisplay").text("Location: " + child.location);
+  $("#roomDisplay").text("Rooms: " + child.room);
+  $("#numberOfGuestDisplay").text("Number of Guests: " + child.Number_Of_Guest);
+  $("#checkInDateDisplay").text("Check In: " + child.check_In_Date);
+  $("#checkOutDateDisplay").text("Check Out: " + child.check_Out_Date);
+  $("#specialRequestDisplay").text("Special Requests: " + child.special_Request);
 }
-
-
-// function renderImage(snap) {
-//   var uploadTask = firebase.storage().ref().child('/Images/' + selectedFile.name).put(selectedFile);
-//   var downloadURL = uploadTask.snap.downloadURL;
-//   console.log(downloadURL);
-//   var profileImage = $("<img class = 'profile-image'>").attr("src", downloadURL);
-//   $(".image").imageDiv.append(profileImage);
-
-// }
-
 
 $("#logOut").on("click", function () {
   console.log("I am log out");
@@ -187,9 +144,4 @@ $("#logOut").on("click", function () {
   window.location = "../templates/index.html";
 });
 
-function hideSignIn() {
-  $("#signIn").hide()
-  $("#account").show()
-};
 
-hideSignIn()

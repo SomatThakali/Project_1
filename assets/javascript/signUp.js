@@ -6,6 +6,7 @@ var config = {
   storageBucket: "blue-lama-retreat-7a0c6.appspot.com",
   messagingSenderId: "106620423709"
 };
+
 firebase.initializeApp(config);
 
 $("#forgot-password").on("click", function() {

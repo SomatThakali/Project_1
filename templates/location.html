@@ -1,79 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-    <title>Blue Llama</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <title>Blue Llama</title>
+        
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
   </head>
 
   <body>
     <header>
       <nav class="navbar navbar-expand-md navbar navbar-dark bg-dark">
-        <a class="navbar-brand  bm-2 ntext-white" href="index.html"
-          ><img src="../assets/images/image.jpg" width="200"
-        /></a>
-        <div
-          class="navbar-collapse justify-content-end"
-          id="navbarNavAltMarkup"
-        >
+        <a class="navbar-brand  bm-2 ntext-white" href="index.html"><img src="./assets/images/image.jpg" width="200"></a>
+        <div class="navbar-collapse justify-content-end" id="navbarNavAltMarkup">
           <div class="navbar-nav nav">
-            <a class="nav-item nav-link active" id="home" href="index.html"
-              >Home</a
-            >
-            <a class="nav-item nav-link" id="location" href="location.html"
-              >Location</a
-            >
-            <a class="nav-item nav-link" id="retreats" href="retreats.html"
-              >The Retreats</a
-            >
-            <a class="nav-item nav-link" id="book" href="booking.html"
-              >Book Now</a
-            >
-            <a class="nav-item nav-link" id="signIn" href="signUp.html"
-              >Sign-In/ Register</a
-            >
+            <a class="nav-item nav-link active" id="home" href="">Home</a>
+            <a class="nav-item nav-link"  id="location" href="">Location</a>
+            <a class="nav-item nav-link" id="retreats" href="">The Retreats</a>
+            <a class="nav-item nav-link" id="book" href="">Book Now</a>
+            <a class="nav-item nav-link" id="signIn" href="">Sign-In/ Register</a>
           </div>
         </div>
       </nav>
     </header>
+      <div id="map"></div>
+      <!-- #weatherContainer -->
+      <div id="weather">
+      <!-- #weatherDisplay -->
+      <ul class="list-group">
+        <!-- #weekDisplay -->
+          <li class="list-group-item">
+            <button id="date1" type="button" class="btn btn-outline-info">Sunday</button>
+            <span style="margin-right:9%"></span>
+            <button id="date2" type="button" class="btn btn-outline-info">Monday</button>
+            <span style="margin-right:9%"></span>
+            <button id="date3" type="button" class="btn btn-outline-info">Tuesday</button>
+            <span style="margin-right:9%"></span>
+            <button id="date4" type="button" class="btn btn-outline-info">Wedndsday</button>
+            <span style="margin-right:9%"></span>
+            <button id="date5" type="button" class="btn btn-outline-info">Thursday</button>
+            <span style="margin-right:9%"></span>
+            <button id="date6" type="button" class="btn btn-outline-info">Friday</button>
+            <span style="margin-right:9%"></span>
+            <button id="date7" type="button" class="btn btn-outline-info">Saturday</button>
+          </li><!-- END #weekDisplay END -->
+          <!-- #tempDisplay -->
+          <li class="list-group-item">
+            <h5 id="tempDisplay"></h5></li><!-- END #tempDisplay END  -->
+          <!-- #forecastDisplay -->
+          <li class="list-group-item">
+            <p></p></li><!-- END #forecastDisplay END -->
+        </ul><!-- END #weatherDisplay END -->
+      </div><!-- END #weatherContainer END -->
+      <!-- #loc1 content -->
+      <div id="loc1">
+      Central Park
+      <button type="button" class="btn btn-primary">Book now!</button>
+      </div>
+      <!-- #loc2 content -->
+      <div id="loc2">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-12">
+                      <h2>Grand Central Nights</h2>
+                  </div>
+              </div>
+              <br/>
+              <div class="row">
+                  <div class="col-md-12">
+                  "In the subterranean depths of Manhattan, a huge space was carved
+                  out, where trains could be boarded from platforms at two different
+                  levels. Grand Central, the world's loveliest station."
+                  <br/>
+                  <span>-David Cannadine</span>
+                  </div>
+              </div>
+              <br/>
+              <div class="row">
+                  <div class="col-md-4"></div>
+                  <div class="col-md-4">
+                      <h3>$789</h3>
+                  </div>
+                  <div class="col-md-4"></div>
+              </div>
+              <br/>
+              <div class="row">
+                  <div class="col-md-1"></div>
+                  <div class="col-md-6">
+                  <a href="signUp.html" type="button" class="btn btn-warning book-now">Book Now</a>
+                  </div>
+                  <div class="col-md-4">
+                  <a href="learn_gc.html" type="button" class="btn btn-dark learn-more">Learn More</a> 
+                  </div>
+                  <div class="col-md-1"></div>
+                </div>
+              </div>
+      </div>
+      <!-- #loc3 content -->
+      <div id="loc3">
+      The High Line
+      </div>
 
-    <input type="radio" name="radioBtn" ID="location1" 
-    /> Number 1 <br/>
-    <input type="radio" name="radioBtn" ID="location2"
-    /> Number 2 <br/>
-    <input type="radio" name="radioBtn" ID="location3" 
-    /> Number 3
-
-    <br/>
-    <br/>
-
-    <input type="button" id="btnGetValue" Value="Get Value" />
-    <p id="locationDisplay"></p>
-
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.js"
-      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-      crossorigin="anonymous"
-    ></script>
-    <script src="../assets/javascript/locationBtn.js"></script>
-
-  </body>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYbxI7yeH2FdCaON4DdDkNhwlIOV8QQuQ&callback=initMap" async defer></script>
 </html>

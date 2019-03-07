@@ -61,14 +61,21 @@ $("#login").on("click", function () {
   $("#forgot-password").show();
 });
 
+
+
+
 firebase.auth().onAuthStateChanged(function (user) {
+
   if (user) {
     // $("#userMessage").text("Welcome " + myUserIdEmail);
-    $("#account").show();
-    $("#signIn").hide();
-    window.location = "../templates/bookNowModal.html";
+    // $("#account").show();
+    // $("#signIn").hide();
+
+    window.location = "../templates/booking.html";
     console.log("I am logged in");
   } else {
+    // findlink.href = "../templates/signUp.html";
+    // link.setAttribute('href', "../templates/signUp.html");
     console.log("not logged in");
   }
 });
@@ -135,7 +142,7 @@ function hidePasswordReset() {
   $("#signUp").hide();
   $("#register").hide();
   $("#passwordReset").hide();
-  $("#account").hide();
+  // $("#account").hide();
 }
 
 hidePasswordReset();

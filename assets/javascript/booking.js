@@ -17,6 +17,7 @@ var lastName = "";
 var email = "";
 var phoneNumber = "";
 //booking info
+var location = "";
 var room = 0;
 var numberOfGuest = 0;
 var checkInDate = "";
@@ -40,22 +41,22 @@ $("#submitButton").on("click", function (event) {
   phoneNumber = $("#phoneNumberInput")
     .val()
     .trim();
-
+  //booking info
+  location = $("#locationInput")
+    .val()
+    .trim();
   room = $("#roomInput")
     .val()
     .trim();
   numberOfGuest = $("#peopleInput")
     .val()
     .trim();
-
   checkInDate = $("#checkInDate")
     .val()
     .trim();
-
   checkOutDate = $("#checkOutDate")
     .val()
     .trim();
-
   comments = $("#comments")
     .val()
     .trim();
@@ -70,6 +71,7 @@ $("#submitButton").on("click", function (event) {
     Email: email,
     Phone_number: phoneNumber,
     // Details
+    location: location,
     room: room,
     Number_Of_Guest: numberOfGuest,
     check_In_Date: checkInDate,
@@ -135,6 +137,7 @@ function renderRow(snap) {
   var lastNameTd = $("<td id='lastNameDisplay'>").text(child.Last_name);
   var emailTd = $("<td id='emailDisplay'>").text(child.Email);
   var phoneNumberTd = $("<td id='tripDateDisplay'>").text(child.Phone_number);
+  var locationTd = $("<td id='locationDisplay'>").text(child.location);
   var roomTd = $("<td id='roomDisplay'>").text(child.room);
   var numberOfGuestTd = $("<td id='numberOfGuestDisplay'>").text(
     child.Number_Of_Guest
@@ -159,6 +162,7 @@ function renderRow(snap) {
     lastNameTd,
     emailTd,
     phoneNumberTd,
+    locationTd,
     roomTd,
     numberOfGuestTd,
     checkInDateTd,
@@ -167,7 +171,6 @@ function renderRow(snap) {
   );
   // Append the table row to the table body
   $("tbody").append(tRow);
-
 }
 
 
@@ -180,16 +183,15 @@ function renderRow(snap) {
 
 // }
 
-
 $("#logOut").on("click", function () {
   console.log("I am log out");
   firebase.auth().signOut();
   window.location = "../templates/index.html";
 });
 
-function hideSignIn() {
-  $("#signIn").hide()
-  $("#account").show()
-};
+// function hideSignIn() {
+//   $("#signIn").hide()
+//   $("#account").show()
+// };
 
-hideSignIn()
+// hideSignIn()

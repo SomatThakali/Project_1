@@ -6,7 +6,9 @@
     overflow-x: hidden !important;
 }
 
-#image_gc {
+#image_gc,
+#image_govisle,
+#image_cp {
     max-width: 100%;
     width: 100%;
 }
@@ -33,12 +35,14 @@
     background-color: white;
 }
 
-#accomodation-text-h4, #menu-text-h4{
+#accomodation-text-h4,
+#menu-text-h4 {
     margin-top: 20px;
     text-align: center;
 }
 
-#accomodation-row, #dining-row {
+#accomodation-row,
+#dining-row {
     margin-top: 40px;
 }
 
@@ -120,6 +124,7 @@
     #accomodation_h6 {
         margin-top: 40px;
     }
+
     #dining_h6 {
         margin-top: 40px;
     }
@@ -130,18 +135,29 @@
         width: 900px !important;
         height: 300px;
     }
+
     #gc_learnmore_h2 {
         margin-top: 35px;
         text-align: center;
         font-size: 25px;
     }
+
     #accomodation_p {
         margin-top: 40px;
     }
+
     #gc-dining-img {
         width: 100%;
     }
+<<<<<<< HEAD
     #google-map {
         height: 300px;
     }
 }
+=======
+
+    #google-map {
+        height: 300px;
+    }
+}
+>>>>>>> febbb3a6cf6296336799d9613e54005ac1cf5f92

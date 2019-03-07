@@ -3,7 +3,7 @@ var latVal = [40.774309349999996, 40.75361345, 40.74770384999999];
 var lngVal = [-73.9708367973161, -73.97658004429898, -74.00489117085408];
 var locId = ["loc1", "loc2", "loc3"];
 var locTitle = ["Central Park", "Grand Central Station", "The High Line"];
-
+console.log("map initialized");
 /** Initializes the map and the custom popup. */
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {

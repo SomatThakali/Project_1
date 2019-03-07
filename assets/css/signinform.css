@@ -46,7 +46,7 @@ body {
     color: #f5f5f5;
 }
 
-#signUp {
+#createAccount, #signUp{
     background-color: orange;
 }
 

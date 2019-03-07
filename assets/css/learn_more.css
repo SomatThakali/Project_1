@@ -105,6 +105,17 @@
     height: 500px;
 }
 
+#book-now-div {
+    width: 100%;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+#book-now-div-btn {
+    width: 100px;
+}
+
 @media screen and (max-width: 991px) {
     #accomodation_h6 {
         margin-top: 40px;
@@ -129,5 +140,8 @@
     }
     #gc-dining-img {
         width: 100%;
+    }
+    #google-map {
+        height: 300px;
     }
 }

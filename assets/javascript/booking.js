@@ -6,6 +6,7 @@ var config = {
   storageBucket: "blue-lama-retreat-7a0c6.appspot.com",
   messagingSenderId: "106620423709"
 };
+
 firebase.initializeApp(config);
 
 var database = firebase.database();
@@ -50,6 +51,7 @@ $("#submitButton").on("click", function (event) {
   checkInDate = $("#checkInDate")
     .val()
     .trim();
+
   checkOutDate = $("#checkOutDate")
     .val()
     .trim();
@@ -86,7 +88,6 @@ database.ref().once(
     if (firebase.auth().currentUser) {
       var myUserId = firebase.auth().currentUser.uid;
       // console.log(currentUser);
-
       var myUserIdEmail = firebase.auth().currentUser.email;
       $("#userMessage").text("Welcome " + myUserIdEmail);
 
@@ -186,45 +187,9 @@ $("#logOut").on("click", function () {
   window.location = "../templates/index.html";
 });
 
+function hideSignIn() {
+  $("#signIn").hide()
+  $("#account").show()
+};
 
-var selectedFile;
-$("#file").on("change", function (event) {
-  // ("#uploadButton").show();
-  selectedFile = event.target.files[0];
-});
-
-var user;
-
-function upLoadFile() {
-  var myUserId = firebase.auth().currentUser.uid;
-
-  var uploadTask = firebase.storage().ref().child('/Images/' + selectedFile.name).put(selectedFile);
-  // Register three observers:
-  // 1. 'state_changed' observer, called any time the state changes
-  // 2. Error observer, called on failure
-  // 3. Completion observer, called on successful completion
-  uploadTask.on('state_changed', function (snapshot) {
-    // Observe state change events such as progress, pause, and resume
-    // See below for more detail
-  }, function (error) {
-    // Handle unsuccessful uploads
-  }, function () {
-    // Handle successful uploads on complete
-    // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-    var postKey = firebase.database().ref("images/").push().key;
-    var downloadURL = uploadTask.snapshot.downloadURL;
-
-    var updates = {};
-    var postData = {
-      url: downloadURL,
-      user: myUserId
-    }
-    updates['images/' + postKey] = postData;
-    firebase.database().ref().update(updates);
-
-    $(".upload-group")[0].before("Success!");
-    $(".upload-group").hide();
-
-  });
-
-}
+hideSignIn()

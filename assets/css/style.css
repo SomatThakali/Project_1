@@ -152,7 +152,9 @@ body {
 
 @media screen and (max-width: 460px) {
   .slider {
+    /* width: 900px;
+    height: 300px; */
     position: relative;
-    right: 55%;
+    right: 65%;
   }
 }

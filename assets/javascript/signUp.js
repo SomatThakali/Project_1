@@ -43,7 +43,8 @@ $("#login").on("click", function () {
         Swal.fire({
           type: "error",
           title: "Oops...",
-          text: "Please enter your information"
+          // text: "Please enter your information"
+          text: errorMessage
         });
       }
       // console.log(error);
@@ -86,7 +87,9 @@ $("#createAccount").on("click", function (event) {
           Swal.fire({
             type: "error",
             title: "Oops...",
-            text: "Please enter your information"
+            // text: "Please enter your information"
+            text: errorMessage
+
           });
         }
         // console.log(error);

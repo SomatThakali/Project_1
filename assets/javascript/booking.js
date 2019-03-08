@@ -132,8 +132,6 @@ $("#logOut").on("click", function() {
   window.location = "../templates/index.html";
 });
 
-<<<<<<< HEAD
-=======
 $("#signIn").hide();
 // firebase.auth().onAuthStateChanged(function(user) {
 //   if (user) {
@@ -144,4 +142,3 @@ $("#signIn").hide();
 //     console.log("not logged in");
 //   }
 // });
->>>>>>> dfecf6aee22ad22dfc273ebb6a5bb878a9dc8630

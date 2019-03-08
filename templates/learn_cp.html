@@ -1,158 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/learn_more.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/learn_more.css" />
     <title>Blue Llama</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <nav class="navbar navbar-expand-md">
-            <a class="navbar-brand" href="index.html">
-                <h1 id="blue-llama-heading" class="display-4">BLUE LLAMA <span id="retreats-heading">Retreats</span></h1>
-            </a>
-            <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                <div class="navbar-nav nav">
-                    <a class="nav-item nav-link display-4" id="home" href="index.html">Home</a>
-                    <a class="nav-item nav-link display-4" id="location" href="location.html">Location</a>
-                    <a class="nav-item nav-link display-4" id="retreats" href="retreats.html">The Retreats</a>
-                    <a class="nav-item nav-link display-4" id="book" href="signUp.html">Book Now</a>
-                    <a class="nav-item nav-link display-4" id="signIn" href="signUp.html">Signup/Login</a>
-                    <a class="nav-item nav-link display-4" id="account" href="#">Account</a>
-                </div>
-            </div>
-        </nav>
+      <div id="nav-container" class="nav-base"></div>
     </header>
 
     <div id="gc_information" class="container container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div id="gc_photo">
+            <img
+              id="image_cp"
+              src="../assets/images/centralparklearnmore.jpg"
+              alt="gc_image"
+            />
+          </div>
+          <h2 id="gc-learnmore-h2">CENTRAL PARK NIGHTS</h2>
+        </div>
+      </div>
+
+      <div id="gc_text" class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <div id="gc_photo">
-                    <img id="image_cp" src="../assets/images/centralparklearnmore.jpg" alt="gc_image">
-                </div>
-                <h2 id="gc-learnmore-h2">CENTRAL PARK NIGHTS</h2>
-            </div>
+          <div class="col-12">
+            <p id="gc_p">
+              Central Park is full of attractions, from green meadows to
+              sprawling waters, gardens and unique bridges, music and
+              performance centers, educational facilities, classical
+              architecture and more. Its picturesque beauty boasts natural green
+              landscapes and vistas as far as the eye can see. It’s a retreat
+              unlike any other in the world and now you can reserve it.
+            </p>
+          </div>
         </div>
+      </div>
 
-        <div id="gc_text" class="container">
-            <div class="row">
-                <div class="col-12">
-                    <p id="gc_p"> Central Park is full of attractions, from green meadows to sprawling waters, gardens
-                        and unique bridges, music and performance centers, educational facilities, classical
-                        architecture and more. Its picturesque beauty boasts natural green landscapes and vistas as far
-                        as the eye can see. It’s a retreat unlike any other in the world and now you can reserve it.
-                    </p>
-                </div>
-            </div>
+      <div id="accomodation" class="container">
+        <h4 id="accomodation-text-h4">WHERE YOU WILL STAY</h4>
+        <div id="accomodation-row" class="row">
+          <div class="col-lg-7">
+            <img
+              id="glamping-grand-central"
+              src="../assets/images/gov_interior_crop.png"
+              alt="grand-central-tent"
+            />
+          </div>
+          <div class="col-lg-5">
+            <h6 id="accomodation_h6">SUMMIT TENTS</h6>
+            <p id="accomodation_p">
+              Where luxury and rustic style meet. Summit Tents provide privacy
+              and the ultimate elevated camping experience.
+            </p>
+            <ul id="accomodation_list">
+              <li class="accomodation_list_details">
+                King bed or two single beds (a rollaway bed can be added upon
+                request at an additional cost of $100)
+              </li>
+              <li class="accomodation_list_details">
+                1,500 thread-count linens, down comforter, and designer-curated
+                blanket
+              </li>
+              <li class="accomodation_list_details">
+                Private, en suite bathroom with rain-style shower, full flush
+                toilet, and hot running water
+              </li>
+              <li class="accomodation_list_details">
+                Complimentary dining and cocktails
+              </li>
+              <li class="accomodation_list_details">
+                Environmentally-friendly spa bath products and amenities,spa
+                robes, and plush Turkish towels
+              </li>
+            </ul>
+          </div>
         </div>
+      </div>
 
-        <div id="accomodation" class="container">
-            <h4 id="accomodation-text-h4">WHERE YOU WILL STAY</h4>
-            <div id="accomodation-row" class="row">
-                <div class="col-lg-7">
-                    <img id="glamping-grand-central" src="../assets/images/gov_interior_crop.png" alt="grand-central-tent">
-                </div>
-                <div class="col-lg-5">
-                    <h6 id="accomodation_h6">SUMMIT TENTS</h6>
-                    <p id="accomodation_p">Where luxury and rustic style meet. Summit Tents provide privacy and
-                        the ultimate elevated camping experience.
-                    </p>
-                    <ul id="accomodation_list">
-                        <li class="accomodation_list_details">King bed or two single beds (a rollaway bed can
-                            be added upon request at an additional cost of $100)</li>
-                        <li class="accomodation_list_details">1,500 thread-count linens, down comforter, and
-                            designer-curated blanket</li>
-                        <li class="accomodation_list_details">Private, en suite bathroom with rain-style shower,
-                            full flush toilet, and hot running water</li>
-                        <li class="accomodation_list_details">Complimentary dining and cocktails</li>
-                        <li class="accomodation_list_details">Environmentally-friendly spa bath products and
-                            amenities,spa robes, and plush Turkish towels</li>
-                    </ul>
-                </div>
-            </div>
+      <div id="dining" class="container">
+        <h4 id="menu-text-h4">CENTRAL PARK DINING EXPERIENCE</h4>
+        <div id="dining-row" class="row">
+          <div id="dining-col" class="col-lg-7">
+            <img
+              id="gc-dining-img"
+              src="../assets/images/cp_dining.png"
+              alt="dining"
+            />
+          </div>
+          <div class="col-lg-5">
+            <h6 id="dining_h6">DINNER</h6>
+            <p id="dining-description">
+              Central Park offers a variety of dining options, from quick snacks
+              at food carts and concession stands to formal sit-down meals at
+              cafes and restaurants. Our á la carte menu always features a mix
+              of healthy and savory entrees followed by sweet summertime
+              desserts.
+              <br />
+              <br />
+              Menus change based on seasonal availability to ensure we provide
+              only the freshest and locally sourced produce.
+              <br />
+              <br />
+              For something more informal, we can set you up with everything you
+              need for a harbor side BBQ, including beverages, table settings,
+              and ingredients for the main course and sides fully ready to
+              grill. The best part is we will take care of the clean up.
+            </p>
+          </div>
         </div>
+      </div>
 
-        <div id="dining" class="container">
-            <h4 id="menu-text-h4">CENTRAL PARK DINING EXPERIENCE</h4>
-            <div id="dining-row" class="row">
-                <div id="dining-col" class="col-lg-7">
-                    <img id="gc-dining-img" src="../assets/images/cp_dining.png" alt="dining">
-                </div>
-                <div class="col-lg-5">
-                    <h6 id="dining_h6">DINNER</h6>
-                    <p id="dining-description">Central Park offers a variety of dining options, from quick snacks at
-                        food carts and concession stands to formal sit-down meals at cafes and restaurants.
-                        Our á la carte menu always features a mix of healthy and savory entrees
-                        followed by sweet summertime desserts.
-                        <br>
-                        <br>
-                        Menus change based on seasonal availability to ensure we provide only the freshest and locally
-                        sourced produce.
-                        <br>
-                        <br>
-                        For something more informal, we can set you up with everything you need for a harbor side BBQ,
-                        including beverages, table settings, and ingredients for the main course and sides fully ready
-                        to grill. The best part is we will take care of the clean up.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div id="directions" class="container">
-            <h4 id="directions-text-h4">HOW TO GET THERE</h4>
-            <div id="directions-text" class="row">
-                <div class="col-lg-12">
-
-                    <p id="directions-p">Central park is located in the heart of New York City, Manhattan between 
-                        the Upper West Side and Upper East Side, roughly bounded by Fifth Avenue on the east, Central 
-                        Park West (Eighth Avenue) on the west, Central Park South (59th Street) on the south,
-                        and Central Park North (110th Street) on the north making it reachable on foot from many Manhattan
-                        neighborhoods. We’re easily accessible via public transportation, all you have to do is hop off the 
-                        subway at Columbus Circle or Fifth Avenue to enter the park from the south.
-
-                        
-                        Local airports include Newark International Airport, LaGuardia Airport and JFK International
-                        Airport.               
-                  </p>
-                </div>
-                <!-- <div id="map-row" class="row"> -->
-                <iframe id="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12083.
+      <div id="directions" class="container">
+        <h4 id="directions-text-h4">HOW TO GET THERE</h4>
+        <div id="directions-text" class="row">
+          <div class="col-lg-12">
+            <p id="directions-p">
+              Central park is located in the heart of New York City, Manhattan
+              between the Upper West Side and Upper East Side, roughly bounded
+              by Fifth Avenue on the east, Central Park West (Eighth Avenue) on
+              the west, Central Park South (59th Street) on the south, and
+              Central Park North (110th Street) on the north making it reachable
+              on foot from many Manhattan neighborhoods. We’re easily accessible
+              via public transportation, all you have to do is hop off the
+              subway at Columbus Circle or Fifth Avenue to enter the park from
+              the south. Local airports include Newark International Airport,
+              LaGuardia Airport and JFK International Airport.
+            </p>
+          </div>
+          <!-- <div id="map-row" class="row"> -->
+          <iframe
+            id="google-map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12083.
                 274977595185!2d-73.96960373444381!3d40.78799880819938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.
                 1!3m3!1m2!1s0x89c2589a018531e3%3A0xb9df1f7387a94119!2sCentral+Park!5e0!3m2!1sen!2sus!4v1551833685468"
-                    frameborder="0" style="border:0" allowfullscreen></iframe>
-                <!-- </div> -->
-            </div>
-            <div id="book-now-div" class="container text-center">
-                <a href="signUp.html" id="book-now-div-btn" class="btn btn-warning book-now">Book Now</a>
-            </div>
+            frameborder="0"
+            style="border:0"
+            allowfullscreen
+          ></iframe>
+          <!-- </div> -->
         </div>
+        <div id="book-now-div" class="container text-center">
+          <a
+            href="signUp.html"
+            id="book-now-div-btn"
+            class="btn btn-warning book-now"
+            >Book Now</a
+          >
+        </div>
+      </div>
     </div>
 
     <div class="card-footer text-black text-center">
-        <p id="footer-text">© 2019 Blue Llama </p>
+      <p id="footer-text">© 2019 Blue Llama</p>
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
-</body>
-
+    <script src="../assets/javascript/initializeFirebase.js"></script>
+    <script src="../assets/javascript/hideShowAccount.js"></script>
+  </body>
 </html>

@@ -8,6 +8,11 @@ body {
   color: #212121;
 }
 
+#nav-container {
+  height: 76px;
+  background-color: orange;
+}
+
 .navbar {
   background: orange;
   width: 100%;
@@ -77,12 +82,12 @@ body {
   height: 200px;
 }
 
-.title-h5  {
+.title-h5 {
   color: white;
 }
 
-.card-text{
-  color: white; 
+.card-text {
+  color: white;
   margin-bottom: 10px !important;
 }
 
@@ -131,7 +136,7 @@ a:link {
     margin-top: 10px;
     font-size: 25px;
   }
-  
+
   #blue-blurb {
     width: 70%;
   }
@@ -175,4 +180,3 @@ a:link {
     right: 65%;
   }
 }
-

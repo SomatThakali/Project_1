@@ -1,14 +1,3 @@
-var config = {
-  apiKey: "AIzaSyAKTJreq0OZgWl8ktgzhd2FvPyYyCYhN1M",
-  authDomain: "blue-lama-retreat-7a0c6.firebaseapp.com",
-  databaseURL: "https://blue-lama-retreat-7a0c6.firebaseio.com",
-  projectId: "blue-lama-retreat-7a0c6",
-  storageBucket: "blue-lama-retreat-7a0c6.appspot.com",
-  messagingSenderId: "106620423709"
-};
-
-firebase.initializeApp(config);
-
 var database = firebase.database();
 
 //guest info
@@ -25,7 +14,7 @@ var checkOutDate = "";
 var comments = "";
 
 //on submit button click
-$("#submitButton").on("click", function (event) {
+$("#submitButton").on("click", function(event) {
   console.log("submit button clicked");
   event.preventDefault();
   //guest info
@@ -79,13 +68,12 @@ $("#submitButton").on("click", function (event) {
   });
 
   window.location = "../templates/confirmation.html";
-
 });
 
 // recheck
 database.ref().on(
   "value",
-  function (snapshot) {
+  function(snapshot) {
     if (firebase.auth().currentUser) {
       var myUserId = firebase.auth().currentUser.uid;
       // console.log(currentUser);
@@ -94,33 +82,31 @@ database.ref().on(
 
       database.ref("bookings/" + myUserId).on(
         "child_added",
-        function (snapshot) {
+        function(snapshot) {
           renderRow(snapshot);
 
           console.log("in here");
         },
-        function (errorObject) {
+        function(errorObject) {
           console.log("Errors handled: " + errorObject.code);
         }
       );
 
       database.ref("Images/" + myUserId).on(
         "child_added",
-        function (snapshot) {
-
+        function(snapshot) {
           renderImage(snapshot);
           console.log("in here");
         },
-        function (errorObject) {
+        function(errorObject) {
           console.log("Errors handled: " + errorObject.code);
         }
       );
-
     } else {
       console.log("user not logged in");
     }
   },
-  function (errorObject) {
+  function(errorObject) {
     console.log("Errors handled: " + errorObject.code);
   }
 );
@@ -135,13 +121,24 @@ function renderRow(snap) {
   $("#numberOfGuestDisplay").text("Number of Guests: " + child.Number_Of_Guest);
   $("#checkInDateDisplay").text("Check In: " + child.check_In_Date);
   $("#checkOutDateDisplay").text("Check Out: " + child.check_Out_Date);
-  $("#specialRequestDisplay").text("Special Requests: " + child.special_Request);
+  $("#specialRequestDisplay").text(
+    "Special Requests: " + child.special_Request
+  );
 }
 
-$("#logOut").on("click", function () {
+$("#logOut").on("click", function() {
   console.log("I am log out");
   firebase.auth().signOut();
   window.location = "../templates/index.html";
 });
 
-
+$("#signIn").hide();
+// firebase.auth().onAuthStateChanged(function(user) {
+//   if (user) {
+//     // $("#account").show();
+//     // $("#signIn").hide();
+//     // console.log("I am logged in");
+//   } else {
+//     console.log("not logged in");
+//   }
+// });

@@ -113,7 +113,7 @@ database.ref().on(
 
 function renderRow(snap) {
   var child = snap.val();
-  $("#list-name").text("Name: " + child.First_name + child.Last_name);
+  $("#list-name").text("Name: " + child.First_name + " " + child.Last_name);
   $("#emailDisplay").text("Email: " + child.Email);
   $("#phoneNumber").text("Phone Number : " + child.Phone_number);
   $("#locationDisplay").text("Location: " + child.location);

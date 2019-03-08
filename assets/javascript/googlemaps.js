@@ -1,34 +1,71 @@
 var map, popup, Popup;
-var latVal = [40.774309349999996, 40.75361345, 40.74770384999999];
-var lngVal = [-73.9708367973161, -73.97658004429898, -74.00489117085408];
+var latVal = [40.774309349999996, 40.75361345, 40.688769199999996];
+var lngVal = [-73.9708367973161, -73.97658004429898, -74.01820132326577];
 var locId = ["loc1", "loc2", "loc3"];
-var locTitle = ["Central Park", "Grand Central Station", "The High Line"];
-console.log("map initialized");
+var locTitle = ["Central Park", "Grand Central Station", "Governors Island"];
 /** Initializes the map and the custom popup. */
 function initMap() {
+  console.log("map initialized");
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 40.762009349999996, lng: -73.9858367973161},
-    zoom: 13,
+    center: {lat: 40.738009349999996, lng: -73.9858367973161},
+    zoom: 12,
   });
-for (i = 0; i < locTitle.length; i++){
-  Popup = createPopupClass();
-  popup = new Popup(
+  for (i = 0; i < locTitle.length; i++){
+    console.log("popup " + i + " created");
+    Popup = createPopupClass();
+    popup = new Popup(
       new google.maps.LatLng(latVal[i], lngVal[i]),
       document.getElementById(locId[i]));
-  popup.setMap(map);
-}
-};
 
-var bookBtn = "<a href='signUp.html' class='btn btn-warning book-now'>Book Now</a>";
-var learnBtn = "<a href='learn_gc.html' class='btn btn-dark learn-more'>Learn More</a>";
+      popup.setMap(map);
+    }
+  }
+  /* map btn functionality
+    
+    loc1 = Central Park
+    loc2 = Grand Central Station
+    loc3 = Governor's Island
+  
+  */
+
+ //map button variables
+  var bookBtn = "<a href='signUp.html' class='btn btn-warning book-now'>Book Now</a>";
+  var learnBtn1 = "<a href='learn_cp.html' class='btn btn-dark learn-more'>Learn More</a>";
+  var learnBtn2 = "<a href='learn_gc.html' class='btn btn-dark learn-more'>Learn More</a>";
+  var learnBtn3 = "<a href='learn_gov.html' class='btn btn-dark learn-more'>Learn More</a>";
+
+  var cpBtn = "<button id='loc1Btn' type='button' class='btn btn-primary'>";
+  var gctBtn = "<button id='loc2Btn' type='button' class='btn btn-primary'>";
+  var govBtn = "<button id='loc3Btn' type='button' class='btn btn-primary'>";
+  var closeBtn1 = "<button id='loc1Close' type='button' class='btn btn-primary'>X</button>";
+  var closeBtn2 = "<button id='loc2Close' type='button' class='btn btn-primary'>X</button>";
+  var closeBtn3 = "<button id='loc3Close' type='button' class='btn btn-primary'>X</button>";
+
+  var locList = ["Central Park", "Grand Central Station", "Governors Island"];
+   
+  //map buttons
+    //Central Park
+    $("#loc1Btn").click(function(){
+      $('#loc1').html(bookBtn + learnBtn1 + closeBtn1);
+      $("#loc1Close").click(function(){
+          $('#loc1').html(cpBtn + locList[0] + "</button>");
+        });
+      });
+    //Grand Central Station
+    $("#loc2Btn").click(function(){
+      $('#loc2').html(bookBtn + learnBtn2 + closeBtn2);
+      $("#loc2Close").click(function(){
+        $('#loc2').html(gctBtn + locList[1] + "</button>");
+      });
+    });
+    //Governors Island
+    $("#loc3Btn").click(function(){
+      $('#loc3').html(bookBtn + learnBtn3 + closeBtn3);
+      $("#loc3Close").click(function(){
+        $('#loc3').html(govBtn + locList[2] + "</button>");
+      });
+    });
  
-$("#loc1Btn").on('click', function() {
-    console.log("part 1 init");
-    $("#loc1").html(
-      bookBtn + "<span>" + learnBtn
-    );
-  });
-
 /**
  * Returns the Popup class.
  *
@@ -98,3 +135,4 @@ function createPopupClass() {
 
   return Popup;
 }
+

@@ -48,38 +48,29 @@
       <button id="loc3Btn" type="button" class="btn btn-primary">The High Line</button>
     </div>
 
-    <!-- #weatherContainer -->
-    <div id="weather">
-    <!-- #weatherDisplay -->
-      <ul class="list-group">
-      <!-- #weekDisplay -->
-        <li class="list-group-item">
-          <button id="date1" type="button" class="btn btn-outline-info">Sunday</button>
-          <span style="margin-right:9%"></span>
-          <button id="date2" type="button" class="btn btn-outline-info">Monday</button>
-          <span style="margin-right:9%"></span>
-          <button id="date3" type="button" class="btn btn-outline-info">Tuesday</button>
-          <span style="margin-right:9%"></span>
-          <button id="date4" type="button" class="btn btn-outline-info">Wedndsday</button>
-          <span style="margin-right:9%"></span>
-          <button id="date5" type="button" class="btn btn-outline-info">Thursday</button>
-          <span style="margin-right:9%"></span>
-          <button id="date6" type="button" class="btn btn-outline-info">Friday</button>
-          <span style="margin-right:9%"></span>
-          <button id="date7" type="button" class="btn btn-outline-info">Saturday</button>
-        </li>
-        <!-- END #weekDisplay END -->
+      <!-- #weatherContainer -->
+    <div id="weather" class="container">
+        <!-- #weatherDisplay -->
+        <!-- #weekDisplay -->
+
+          <h3 id="date1" class=""></h3>
+
         <!-- #tempDisplay -->
-        <li class="list-group-item">
-          <h5 id="tempDisplay"></h5>
-        </li><!-- END #tempDisplay END  -->
+  
+          <h5 id="temp1"></h5></li><!-- END #tempDisplay END  -->
         <!-- #forecastDisplay -->
-        <li class="list-group-item">
-          <p></p>
-        </li>
-        <!-- END #forecastDisplay END -->
-      </ul><!-- END #weatherDisplay END -->
+
+          <p id="forecast1"></p>
+
     </div><!-- END #weatherContainer END -->
+    
+    <br>
+    <br>
+    <br>
+    <!-- footer -->
+    <div class="card-footer text-black text-center">
+      <p id="footer-text">© 2019 Blue Llama </p>    
+    </div> 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="../assets/javascript/googlemaps.js"></script>

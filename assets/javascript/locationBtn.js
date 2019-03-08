@@ -33,7 +33,6 @@ $("#btnGetValue").click(function() {
       //populate locationDisplay id
       $("#locationDisplay").text(snapshot.val().selectedLocation);
       console.log(firebase.auth().currentUser);
-
       //errors
     },
     function(errorObject) {

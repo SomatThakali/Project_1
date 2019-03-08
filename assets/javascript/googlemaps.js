@@ -16,6 +16,7 @@ function initMap() {
     popup = new Popup(
       new google.maps.LatLng(latVal[i], lngVal[i]),
       document.getElementById(locId[i]));
+
       popup.setMap(map);
     }
   }
@@ -64,7 +65,7 @@ function initMap() {
         $('#loc3').html(govBtn + locList[2] + "</button>");
       });
     });
-
+ 
 /**
  * Returns the Popup class.
  *

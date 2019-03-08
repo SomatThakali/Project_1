@@ -1,13 +1,3 @@
-var config = {
-  apiKey: "AIzaSyAKTJreq0OZgWl8ktgzhd2FvPyYyCYhN1M",
-  authDomain: "blue-lama-retreat-7a0c6.firebaseapp.com",
-  databaseURL: "https://blue-lama-retreat-7a0c6.firebaseio.com",
-  projectId: "blue-lama-retreat-7a0c6",
-  storageBucket: "blue-lama-retreat-7a0c6.appspot.com",
-  messagingSenderId: "106620423709"
-};
-firebase.initializeApp(config);
-
 var database = firebase.database();
 
 //guest info
@@ -16,6 +6,7 @@ var lastName = "";
 var email = "";
 var phoneNumber = "";
 //booking info
+var locationChoice = "";
 var room = 0;
 var numberOfGuest = 0;
 var checkInDate = "";
@@ -39,21 +30,21 @@ $("#submitButton").on("click", function(event) {
   phoneNumber = $("#phoneNumberInput")
     .val()
     .trim();
-
+  locationChoice = $("#locationInput")
+    .val()
+    .trim();
   room = $("#roomInput")
     .val()
     .trim();
   numberOfGuest = $("#peopleInput")
     .val()
     .trim();
-
   checkInDate = $("#checkInDate")
     .val()
     .trim();
   checkOutDate = $("#checkOutDate")
     .val()
     .trim();
-
   comments = $("#comments")
     .val()
     .trim();
@@ -68,6 +59,7 @@ $("#submitButton").on("click", function(event) {
     Email: email,
     Phone_number: phoneNumber,
     // Details
+    location: locationChoice,
     room: room,
     Number_Of_Guest: numberOfGuest,
     check_In_Date: checkInDate,
@@ -79,13 +71,12 @@ $("#submitButton").on("click", function(event) {
 });
 
 // recheck
-database.ref().once(
+database.ref().on(
   "value",
   function(snapshot) {
     if (firebase.auth().currentUser) {
       var myUserId = firebase.auth().currentUser.uid;
       // console.log(currentUser);
-
       var myUserIdEmail = firebase.auth().currentUser.email;
       $("#userMessage").text("Welcome " + myUserIdEmail);
 
@@ -93,6 +84,18 @@ database.ref().once(
         "child_added",
         function(snapshot) {
           renderRow(snapshot);
+
+          console.log("in here");
+        },
+        function(errorObject) {
+          console.log("Errors handled: " + errorObject.code);
+        }
+      );
+
+      database.ref("Images/" + myUserId).on(
+        "child_added",
+        function(snapshot) {
+          renderImage(snapshot);
           console.log("in here");
         },
         function(errorObject) {
@@ -110,44 +113,17 @@ database.ref().once(
 
 function renderRow(snap) {
   var child = snap.val();
-
-  var tRow = $("<tr>");
-
-  var firstNameTd = $("<td id='firstNameDisplay'>").text(child.First_name);
-  var lastNameTd = $("<td id='lastNameDisplay'>").text(child.Last_name);
-  var emailTd = $("<td id='emailDisplay'>").text(child.Email);
-  var phoneNumberTd = $("<td id='tripDateDisplay'>").text(child.Phone_number);
-  var roomTd = $("<td id='roomDisplay'>").text(child.room);
-  var numberOfGuestTd = $("<td id='numberOfGuestDisplay'>").text(
-    child.Number_Of_Guest
+  $("#list-name").text("Name: " + child.First_name + " " + child.Last_name);
+  $("#emailDisplay").text("Email: " + child.Email);
+  $("#phoneNumber").text("Phone Number : " + child.Phone_number);
+  $("#locationDisplay").text("Location: " + child.location);
+  $("#roomDisplay").text("Rooms: " + child.room);
+  $("#numberOfGuestDisplay").text("Number of Guests: " + child.Number_Of_Guest);
+  $("#checkInDateDisplay").text("Check In: " + child.check_In_Date);
+  $("#checkOutDateDisplay").text("Check Out: " + child.check_Out_Date);
+  $("#specialRequestDisplay").text(
+    "Special Requests: " + child.special_Request
   );
-  var checkInDateTd = $("<td id='checkInDateDisplay'>").text(
-    child.check_In_Date
-  );
-  var checkOutDateTd = $("<td id='checkOutDateDisplay'>").text(
-    child.check_Out_Date
-  );
-  var specialRequestTd = $("<td id='specialRequestDisplay'>").text(
-    child.special_Request
-  );
-  console.log("room Number " + child.room);
-  console.log("checkInDate " + child.check_In_Date);
-  // var tripDateTd = $("<td id='tripDateDisplay'>").text(child.Trip_date);
-
-  // Append the newly created table data to the table row
-  tRow.append(
-    firstNameTd,
-    lastNameTd,
-    emailTd,
-    phoneNumberTd,
-    roomTd,
-    numberOfGuestTd,
-    checkInDateTd,
-    checkOutDateTd,
-    specialRequestTd
-  );
-  // Append the table row to the table body
-  $("tbody").append(tRow);
 }
 
 $("#logOut").on("click", function() {
@@ -155,3 +131,14 @@ $("#logOut").on("click", function() {
   firebase.auth().signOut();
   window.location = "../templates/index.html";
 });
+
+$("#signIn").hide();
+// firebase.auth().onAuthStateChanged(function(user) {
+//   if (user) {
+//     // $("#account").show();
+//     // $("#signIn").hide();
+//     // console.log("I am logged in");
+//   } else {
+//     console.log("not logged in");
+//   }
+// });

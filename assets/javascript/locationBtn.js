@@ -1,15 +1,15 @@
 //location selection button
 
 //firebase config
-var config = {
-  apiKey: "AIzaSyAKTJreq0OZgWl8ktgzhd2FvPyYyCYhN1M",
-  authDomain: "blue-lama-retreat-7a0c6.firebaseapp.com",
-  databaseURL: "https://blue-lama-retreat-7a0c6.firebaseio.com",
-  projectId: "blue-lama-retreat-7a0c6",
-  storageBucket: "",
-  messagingSenderId: "106620423709"
-};
-firebase.initializeApp(config);
+// var config = {
+//   apiKey: "AIzaSyAKTJreq0OZgWl8ktgzhd2FvPyYyCYhN1M",
+//   authDomain: "blue-lama-retreat-7a0c6.firebaseapp.com",
+//   databaseURL: "https://blue-lama-retreat-7a0c6.firebaseio.com",
+//   projectId: "blue-lama-retreat-7a0c6",
+//   storageBucket: "",
+//   messagingSenderId: "106620423709"
+// };
+// firebase.initializeApp(config);
 //assign firebase to database var
 var database = firebase.database();
 

@@ -61,3 +61,11 @@
         /* The max width of the info window. */
         width: 400px;
       }
+
+      /* Close button */
+      #close {
+        float:right;
+        display:inline-flex;
+        padding:2px 5px;
+        background:#ccc;
+    }

@@ -1,7 +1,12 @@
-# Project_1
+# Blue Llama Retreats
 
 ## Built With
-HTML, CSS, Javascript
+HTML, CSS, Javascript, Bootstrap, Slick, Google Maps API, Openweather API, Firebase.
+
+## Project
+Blue Llama is a web app that offers the most unusual retreat experiences in New York City. 
+
+https://somatthakali.github.io/Project_1/templates/index.html
 
 ## Author Team
 - Josh Kraft

@@ -113,11 +113,12 @@ database.ref().on(
 
 function renderRow(snap) {
   var child = snap.val();
+  $("#card-h3-text").text("Thank you " + child.First_name + " for booking with us");
   $("#list-name").text("Name: " + child.First_name + " " + child.Last_name);
   $("#emailDisplay").text("Email: " + child.Email);
   $("#phoneNumber").text("Phone Number : " + child.Phone_number);
-  $("#locationDisplay").text("Location: " + child.location);
-  $("#roomDisplay").text("Rooms: " + child.room);
+  $("#locationDisplay").text("Retreat: " + child.location);
+  $("#roomDisplay").text("Number of Tents: " + child.room);
   $("#numberOfGuestDisplay").text("Number of Guests: " + child.Number_Of_Guest);
   $("#checkInDateDisplay").text("Check In: " + child.check_In_Date);
   $("#checkOutDateDisplay").text("Check Out: " + child.check_Out_Date);

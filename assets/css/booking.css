@@ -2,17 +2,22 @@
     box-sizing: border-box;
 }
 
+body {
+    background-image: url("../images/empire_state.jpg");
+}
+
 #booking-details-h3 {
     text-align: center;
     margin-bottom: 40px;
 }
 
-#booking-container {
-    width: 400px;
-    height: 400px;
+#booking-container {    
+    width: 80%;
     margin: auto;
-    margin-top: 50px;   
-    border-radius: 4px;
+    margin-top: 50px !important;   
+    border-radius: 14px;
+    padding: 20px;
+    background-color: rgb(255,255,255,0.8)
 }
 
 #reservation-h3 {
@@ -20,8 +25,31 @@
     margin-bottom: 40px;
 }
 
-#submitButton {
-    background: orange;
+.form-group {
+    justify-content: center;
+}
+
+.form-inline {
+    justify-content: center;
+}
+
+.form-inline input, select {
+    width: 300px !important;
+    margin: 10px;
+    padding: 20px;
+  }
+
+#text-area {
+    width: 300px;
+    margin: auto;
+}
+
+#submit-booking {
+    background:orange;
+    width: 300px;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
 }
 
 #logOut {
@@ -29,12 +57,9 @@
     color: #f5f5f5;
 }
 
+
 @media screen and (max-width: 640px) {
-    #booking-container{
-        margin: auto;
-        position: relative;
-        top: 80px;
-    }
+
 }
 
 

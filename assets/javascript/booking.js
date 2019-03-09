@@ -136,13 +136,13 @@ function renderRow(snap) {
   console.log("Days diff " + diffDays)
   console.log(diffDays);
   if (child.location === "Governor's Island") {
-    $("#priceDisplay").text(("Price: $") + (diffDays * 100 * numberOfGuest * numberOfTents));
+    $("#priceDisplay").text(("Price: $") + (diffDays * 128 * numberOfGuest * numberOfTents));
   }
   else if (child.location === "Central Park") {
-    $("#priceDisplay").text(("Price: $") + (diffDays * 150 * numberOfGuest * numberOfTents));
+    $("#priceDisplay").text(("Price: $") + (diffDays * 198 * numberOfGuest * numberOfTents));
   }
   else {
-    $("#priceDisplay").text(("Price: $") + (diffDays * 150 * numberOfGuest * numberOfTents));
+    $("#priceDisplay").text(("Price: $") + (diffDays * 268 * numberOfGuest * numberOfTents));
   }
 }
 

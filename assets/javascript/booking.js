@@ -124,6 +124,15 @@ function renderRow(snap) {
   $("#specialRequestDisplay").text(
     "Special Requests: " + child.special_Request
   );
+  if (child.location === "Governor's Island") {
+    $("#priceDisplay").text("Price: $500");
+  }
+  else if (child.location === "Central Park") {
+    $("#priceDisplay").text("Price: $658");
+  }
+  else {
+    $("#priceDisplay").text("Price: $789");
+  }
 }
 
 $("#logOut").on("click", function() {
@@ -132,7 +141,7 @@ $("#logOut").on("click", function() {
   window.location = "../templates/index.html";
 });
 
-$("#signIn").hide();
+// $("#signIn").hide();
 // firebase.auth().onAuthStateChanged(function(user) {
 //   if (user) {
 //     // $("#account").show();

@@ -20,83 +20,68 @@
 
     <div id="booking-container" class="container">
       <h3 id="booking-details-h3">Book your retreat now!</h3>
-      <form id="form-input">
-        <div class="form-group">
-          <label for="first-name">First Name</label>
-          <input type="text" id="firstNameInput" class="form-control" name="name" >
-        </div>
-
-        <div class="form-group">
-          <label for="last-name">Last Name</label>
-          <input type="text" id="lastNameInput" class="form-control" name="name">
-        </div>
-      </form>
-
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="emailInput" class="form-control" name="email">
-        </div>
-
-        <div class="form-group">
-          <label for="phone">Phone</label>
-          <input type="tel" id="phoneNumberInput" class="form-control" name="phone">
-        </div>
-
-        <div class="form-group">
-          <label for="locationType">Location</label>
-          <select id="locationInput" class="form-control">
-            <option value="blank"></option>
-            <option value="1">Grand Central</option>
-            <option value="2" selected>Central Park</option>
-            <option value="3">Governor's Island</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="roomType">Room Type</label>
-          <select id="roomInput" class="form-control">
-            <option value="blank"></option>
-            <option value="1">1 BR</option>
-            <option value="2" selected>2 BR</option>
-            <option value="3">3 BR</option>
-            <option value="4">4 BR</option>
-          </select>
-        </div>
-
-        <div id="guests-dropdown" class="form-group">
-          <label for="guests">No. of Guests</label>
-            <select id="peopleInput" class="form-control">
-              <option value="blank"></option>
-              <option value="1">1</option>
-              <option value="2" selected>2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-          <label for="checkIn">Check In</label>
-          <input type="date" id="checkInDate" class="form-control" name="check-in"/>
-        </div>
         
-        <div class="form-group">
-          <label for="checkOut">Check Out</label>
-          <input type="date" id="checkOutDate" class="form-control" name="check-out"/>
-        </div>
-
-        <div id="special-requests" class="form-group">
-          <label id="label-request" for="request">Special Requests</label>
-          <textarea name="comments" id="comments" class="form-control"></textarea>
-        </div>
-        <!-- <button class="btn" id="submitButton" type="submit">Submit</button> -->
-        <a href="confirmation.html" id="submitButton" class="btn btn-warning book-now">Submit</a>
+      <form class="form-inline">
+        <select id="locationInput" class="form-control">
+          <option value="blank"></option>
+          <option value="Grand Central">Grand Central</option>
+          <option value="Central Park" selected>Central Park</option>
+          <option value="Governor's Island">Governor's Island</option>
+        </select>
       </form>
-      <br>
-      <br>
+
+      <form class="form-inline">
+        <!-- <div class="form-group"> -->
+          <input type="text" id="firstNameInput" class="form-control" placeholder="First name">
+          <input type="text" id="lastNameInput" class="form-control" placeholder="First name">
+        <!-- </div> -->
+      </form>
+
+      <form class="form-inline">
+        <input type="email" id="emailInput" class="form-control" placeholder="Email">
+        <input type="tel" id="phoneNumberInput" class="form-control" placeholder="Phone number">
+      </form>
+
+      <form class="form-inline">
+        <select id="roomInput" class="form-control" aria-placeholder="room-select">
+          <option value="blank"></option>
+          <option value="1">1 tent</option>
+          <option value="2" selected>2 tents</option>
+          <option value="3">3 tents</option>
+          <option value="4">4 tents</option>
+        </select>
+        <select id="peopleInput" class="form-control">
+          <option value="blank"></option>
+          <option value="1">1 guest</option>
+          <option value="2" selected>2 guests</option>
+          <option value="3">3 guests</option>
+          <option value="4">4 guests</option>
+        </select>   
+      </form>
+
+      <form class="form-inline">
+        <!-- <label for="checkIn">Check In</label> -->
+        <input type="date" id="checkInDate" class="form-control" name="check-in"/>
+        <!-- <label for="checkOut">Check Out</label> -->
+        <input type="date" id="checkOutDate" class="form-control" name="check-out"/>
+      </form>
+
+      <form id="text-area">
+        <textarea name="comments" id="comments" class="form-control" placeholder="Special requests"></textarea>
+      </form>
+
+      <div id="submit-booking">
+      <a href="confirmation.html" id="submitButton" class="btn book-now">Submit</a>
+      </div>
+
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-    <script src="../assets/javascript/booking.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

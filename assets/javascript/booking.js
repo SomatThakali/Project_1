@@ -14,7 +14,7 @@ var checkOutDate = "";
 var comments = "";
 
 //on submit button click
-$("#submitButton").on("click", function(event) {
+$("#submitButton").on("click", function (event) {
   console.log("submit button clicked");
   event.preventDefault();
   //guest info
@@ -73,7 +73,7 @@ $("#submitButton").on("click", function(event) {
 // recheck
 database.ref().on(
   "value",
-  function(snapshot) {
+  function (snapshot) {
     if (firebase.auth().currentUser) {
       var myUserId = firebase.auth().currentUser.uid;
       // console.log(currentUser);
@@ -82,23 +82,23 @@ database.ref().on(
 
       database.ref("bookings/" + myUserId).on(
         "child_added",
-        function(snapshot) {
+        function (snapshot) {
           renderRow(snapshot);
 
           console.log("in here");
         },
-        function(errorObject) {
+        function (errorObject) {
           console.log("Errors handled: " + errorObject.code);
         }
       );
 
       database.ref("Images/" + myUserId).on(
         "child_added",
-        function(snapshot) {
+        function (snapshot) {
           renderImage(snapshot);
           console.log("in here");
         },
-        function(errorObject) {
+        function (errorObject) {
           console.log("Errors handled: " + errorObject.code);
         }
       );
@@ -106,7 +106,7 @@ database.ref().on(
       console.log("user not logged in");
     }
   },
-  function(errorObject) {
+  function (errorObject) {
     console.log("Errors handled: " + errorObject.code);
   }
 );
@@ -125,18 +125,28 @@ function renderRow(snap) {
   $("#specialRequestDisplay").text(
     "Special Requests: " + child.special_Request
   );
+
+  var startDate = new Date(child.check_In_Date);
+  var endDate = new Date(child.check_Out_Date);
+  var days = 1000 * 60 * 60 * 24;
+  var diffDays = Math.floor((endDate - startDate) / days);
+  var numberOfGuest = parseInt(child.Number_Of_Guest);
+  console.log("DEBUG " + numberOfGuest);
+  var numberOfTents = parseInt(child.room)
+  console.log("Days diff " + diffDays)
+  console.log(diffDays);
   if (child.location === "Governor's Island") {
-    $("#priceDisplay").text("Price: $500");
+    $("#priceDisplay").text(("Price: $") + (diffDays * 100 * numberOfGuest * numberOfTents));
   }
   else if (child.location === "Central Park") {
-    $("#priceDisplay").text("Price: $658");
+    $("#priceDisplay").text(("Price: $") + (diffDays * 150 * numberOfGuest * numberOfTents));
   }
   else {
-    $("#priceDisplay").text("Price: $789");
+    $("#priceDisplay").text(("Price: $") + (diffDays * 150 * numberOfGuest * numberOfTents));
   }
 }
 
-$("#logOut").on("click", function() {
+$("#logOut").on("click", function () {
   console.log("I am log out");
   firebase.auth().signOut();
   window.location = "../templates/index.html";

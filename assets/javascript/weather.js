@@ -26,10 +26,15 @@ axios.get(weatherUrl).then(function(response){
   var temp5 = (response.data.list[28].main.temp).toString();
   //FORECAST
   var forecast1 = response.data.list[0].weather[0].main;
+  console.log(forecast1)
   var forecast2 = response.data.list[7].weather[0].main;
+  console.log(forecast2)
   var forecast3 = response.data.list[14].weather[0].main;
+  console.log(forecast3)
   var forecast4 = response.data.list[21].weather[0].main;
+  console.log(forecast4)
   var forecast5 = response.data.list[28].weather[0].main;
+  console.log(forecast5)
 
   $("#date1").html(date1);
   $("#date2").html(date2);

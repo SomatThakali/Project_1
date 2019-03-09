@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background-image: url("../images/govisle.jpg")
+}
+
 .reservation-div {
     width: 100%;
     margin: auto;
@@ -9,6 +13,7 @@
 }
 
 .card {
+    background-color: rgb(255,255,255,0.8);
     color: black;
 }
 

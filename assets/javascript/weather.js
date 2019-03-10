@@ -54,54 +54,34 @@ axios.get(weatherUrl).then(function(response){
   $("#forecast4").html(forecast4);
   $("#forecast5").html(forecast5);
 
-  //icons for forecast1
-  if (forecast1 === "Clouds") {
-    $("#icon1").attr("src", "../assets/images/Cloud.svg")
+  var icon1 = $("#icon1");
+  var icon2 = $("#icon2");
+  var icon3 = $("#icon3");
+  var icon4 = $("#icon4");
+  var icon5 = $("#icon5");
+  
+  function weatherIcon(forecast, icon) {
+    if (forecast === "Clouds") {
+      icon.attr("src", "../assets/images/Cloud.svg");
+    } 
+    else if (forecast === "Sun" || forecast === "Clear") {
+      icon.attr("src", "../assets/images/Sun.svg");
+    } 
+    else if (forecast === "Rain") {
+      icon.attr("src", "../assets/images/Rain.svg");
+    } 
+    else {
+      icon.att("src", "../assets/images/Snow.svg")
+    }
   }
-  if (forecast1 === "Sun" || forecast1 === "Clear") {
-    $("#icon1").attr("src", "../assets/images/Sun.svg")
-  }
-  if (forecast1 === "Rain") {
-    $("#icon1").attr("src", "../assets/images/Rain.svg");
-  }
-  //icons for forecast2
-  if (forecast2 === "Clouds") {
-    $("#icon2").attr("src", "../assets/images/Cloud.svg")
-  }
-  if (forecast2 === "Sun" || forecast2 === "Clear") {
-    $("#icon2").attr("src", "../assets/images/Sun.svg")
-  }
-  if (forecast2 === "Rain") {
-    $("#icon2").attr("src", "../assets/images/Rain.svg");
-  }
-  //icons for forecast3
-  if (forecast3 === "Clouds") {
-    $("#icon3").attr("src", "../assets/images/Cloud.svg")
-  }
-  if (forecast3 === "Sun" || forecast3 === "Clear") {
-    $("#icon3").attr("src", "../assets/images/Sun.svg")
-  }
-  if (forecast3 === "Rain") {
-    $("#icon3").attr("src", "../assets/images/Rain.svg");
-  }
-  //icons for forecast4
-  if (forecast4 === "Clouds") {
-    $("#icon4").attr("src", "../assets/images/Cloud.svg")
-  }
-  if (forecast4 === "Sun" || forecast4 === "Clear") {
-    $("#icon4").attr("src", "../assets/images/Sun.svg")
-  }
-  if (forecast4 === "Rain") {
-    $("#icon4").attr("src", "../assets/images/Rain.svg");
-  }
-  //icons for forecast5
-  if (forecast5 === "Clouds") {
-    $("#icon5").attr("src", "../assets/images/Cloud.svg")
-  }
-  if (forecast5 === "Sun" || forecast4 === "Clear") {
-    $("#icon5").attr("src", "../assets/images/Sun.svg")
-  }
-  if (forecast5 === "Rain") {
-    $("#icon5").attr("src", "../assets/images/Rain.svg");
-  }
+
+  weatherIcon(forecast1, icon1)
+  weatherIcon(forecast2, icon2)
+  weatherIcon(forecast3, icon3)
+  weatherIcon(forecast4, icon4)
+  weatherIcon(forecast5, icon5)
+
 })
+
+
+

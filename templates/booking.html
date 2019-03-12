@@ -1,98 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
-      <link rel="stylesheet" href="../assets/css/style.css">
-      <link rel="stylesheet" href="../assets/css/booking.css">
-      <title>Blue Llama</title>
-  </head>
 
-  <body>
-    <header>
-      <div id="nav-container" class="nav-base"></div>
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/booking.css">
+  <title>Blue Llama</title>
+</head>
 
-    <div id="booking-container" class="container">
-      <h3 id="booking-details-h3">Book your retreat now!</h3>
-        
-      <form class="form-inline">
-        <select id="locationInput" class="form-control">
-          <option value="blank"></option>
-          <option value="Grand Central">Grand Central</option>
-          <option value="Central Park" selected>Central Park</option>
-          <option value="Governor's Island">Governor's Island</option>
-        </select>
-      </form>
+<body>
+  <header>
+    <div id="nav-container" class="nav-base"></div>
+  </header>
 
-      <form class="form-inline">
-        <!-- <div class="form-group"> -->
-          <input type="text" id="firstNameInput" class="form-control" placeholder="First name">
-          <input type="text" id="lastNameInput" class="form-control" placeholder="First name">
-        <!-- </div> -->
-      </form>
+  <div id="booking-container" class="container">
+    <h3 id="booking-details-h3">Book your retreat now!</h3>
 
-      <form class="form-inline">
-        <input type="email" id="emailInput" class="form-control" placeholder="Email">
-        <input type="tel" id="phoneNumberInput" class="form-control" placeholder="Phone number">
-      </form>
+    <form class="form-inline">
+      <select id="locationInput" class="form-control">
+        <option value="blank"></option>
+        <option value="Grand Central">Grand Central</option>
+        <option value="Central Park" selected>Central Park</option>
+        <option value="Governor's Island">Governor's Island</option>
+      </select>
+    </form>
 
-      <form class="form-inline">
-        <select id="roomInput" class="form-control" aria-placeholder="room-select">
-          <option value="blank"></option>
-          <option value="1">1 tent</option>
-          <option value="2" selected>2 tents</option>
-          <option value="3">3 tents</option>
-          <option value="4">4 tents</option>
-        </select>
-        <select id="peopleInput" class="form-control">
-          <option value="blank"></option>
-          <option value="1">1 guest</option>
-          <option value="2" selected>2 guests</option>
-          <option value="3">3 guests</option>
-          <option value="4">4 guests</option>
-        </select>   
-      </form>
+    <form class="form-inline">
+      <!-- <div class="form-group"> -->
+      <input type="text" id="firstNameInput" class="form-control" placeholder="First name">
+      <input type="text" id="lastNameInput" class="form-control" placeholder="First name">
+      <!-- </div> -->
+    </form>
 
-      <form class="form-inline">
-        <!-- <label for="checkIn">Check In</label> -->
-        <input type="date" id="checkInDate" class="form-control" name="check-in"/>
-        <!-- <label for="checkOut">Check Out</label> -->
-        <input type="date" id="checkOutDate" class="form-control" name="check-out"/>
-      </form>
+    <form class="form-inline">
+      <input type="email" id="emailInput" class="form-control" placeholder="Email">
+      <input type="tel" id="phoneNumberInput" class="form-control" placeholder="Phone number">
+    </form>
 
-      <form id="text-area">
-        <textarea name="comments" id="comments" class="form-control" placeholder="Special requests"></textarea>
-      </form>
+    <form class="form-inline">
+      <select id="roomInput" class="form-control" aria-placeholder="room-select">
+        <option value="blank"></option>
+        <option value="1">1 tent</option>
+        <option value="2" selected>2 tents</option>
+        <option value="3">3 tents</option>
+        <option value="4">4 tents</option>
+      </select>
+      <select id="peopleInput" class="form-control">
+        <option value="blank"></option>
+        <option value="1">1 guest</option>
+        <option value="2" selected>2 guests</option>
+        <option value="3">3 guests</option>
+        <option value="4">4 guests</option>
+      </select>
+    </form>
 
-      <div id="submit-booking">
+    <form class="form-inline">
+      <!-- <label for="checkIn">Check In</label> -->
+      <input type="date" id="checkInDate" class="form-control" name="check-in" />
+      <!-- <label for="checkOut">Check Out</label> -->
+      <input type="date" id="checkOutDate" class="form-control" name="check-out" />
+    </form>
+
+    <form id="text-area">
+      <textarea name="comments" id="comments" class="form-control" placeholder="Special requests"></textarea>
+    </form>
+
+    <div id="submit-booking">
       <a href="confirmation.html" id="submitButton" class="btn book-now">Submit</a>
-      </div>
-
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-     <!-- footer -->
-    <div class="card-footer text-black text-center">
-      <p id="footer-text">© 2019 Blue Llama </p>    
-    </div> 
 
-    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="../assets/javascript/initializeFirebase.js"></script>
-    <script src="../assets/javascript/booking.js"></script>
-    <script src="../assets/javascript/hideShowAccount.js"></script>
-  </body>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <!-- footer -->
+  <div class="card-footer text-black text-center">
+    <p id="footer-text">© 2019 Blue Llama </p>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <script src="../assets/javascript/initializeFirebase.js"></script>
+  <script src="../assets/javascript/booking.js"></script>
+  <script src="../assets/javascript/hideShowAccount.js"></script>
+</body>
+
 </html>
